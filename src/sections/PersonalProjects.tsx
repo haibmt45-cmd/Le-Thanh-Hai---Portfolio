@@ -69,16 +69,16 @@ const PersonalProjects: React.FC = () => {
           </div>
         </div>
 
-        {/* Masonry Layout Grid */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+        {/* Structured Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10 w-full max-w-7xl mx-auto">
           {images.map((item, i) => (
             <GlassCard 
               key={i} 
               delay={i * 0.15} 
-              className="p-3 border-blue-400/30 break-inside-avoid group cursor-pointer hover:-translate-y-4 hover:border-blue-400 hover:shadow-[0_20px_50px_-5px_rgba(37,99,235,0.4)] transition-all duration-500" 
+              className="p-3 border-blue-400/30 group cursor-pointer hover:-translate-y-4 hover:border-blue-400 hover:shadow-[0_20px_50px_-5px_rgba(37,99,235,0.4)] transition-all duration-500" 
               glowColor="blue"
             >
-              <div className="relative overflow-hidden rounded-2xl">
+              <div className="relative overflow-hidden rounded-2xl aspect-[4/3]">
                 <img 
                   src={item.src} 
                   alt={item.alt} 
@@ -86,7 +86,7 @@ const PersonalProjects: React.FC = () => {
                   loading="lazy"
                 />
                 {/* Inner shadow overlay for premium depth */}
-                <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_40px_rgba(0,0,0,0.5)] rounded-2xl transition-opacity duration-500 group-hover:opacity-70" />
+                <div className="absolute inset-0 z-10 pointer-events-none shadow-[inset_0_0_40px_rgba(0,0,0,0.5)] rounded-2xl transition-opacity duration-500 group-hover:opacity-70" />
               </div>
             </GlassCard>
           ))}
