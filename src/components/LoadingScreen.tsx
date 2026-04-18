@@ -24,15 +24,14 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
       }, 15); // Adjust speed
       return () => clearInterval(interval);
     } else if (percentage === 100 && index === 1) {
-      // Significantly reduce delay before slide up to make it feel snappier.
-      const finalTimer = setTimeout(() => setIsExiting(true), 50);
-      return () => clearTimeout(finalTimer);
+      // Immediate slide up and exit logic
+      setIsExiting(true);
     }
   }, [index, percentage]);
 
   useEffect(() => {
     if (isExiting) {
-      setTimeout(onComplete, 1200); // Slide up duration
+      onComplete(); // Instant trigger
     }
   }, [isExiting, onComplete]);
 
@@ -41,7 +40,7 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
       {!isExiting && (
         <motion.div 
            className="fixed inset-0 z-[9999] bg-black flex items-center justify-center font-sans text-white px-4 text-center"
-           exit={{ y: '-100%', transition: { duration: 1.2, ease: "easeInOut" } }}
+           exit={{ y: '-100%', transition: { duration: 0.5, ease: "easeInOut" } }}
         >
            <AnimatePresence mode="wait">
               {index === 0 ? (
