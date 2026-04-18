@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
-const texts = ['Lê Thanh Hải'];
+const texts = ['LÊ THANH HẢI'];
 
 export default function LoadingScreen({ onComplete }: { onComplete: () => void }) {
   const [index, setIndex] = useState(0);
-  const [percentage, setPercentage] = useState(0);
+  const [percentage, setPercentage] = useState(50);
   const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
-    // Show name for longer (1.8s) so it's readable
+    // Show name for 1s
     const textTimer = setTimeout(() => {
-      setIndex(1); // Move to percentage stage
-    }, 1800);
+      setIndex(1);
+    }, 1000);
 
     return () => clearTimeout(textTimer);
   }, []);
