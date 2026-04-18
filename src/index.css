@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+
+  @keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
+
+.animate-gradient-flow {
+  animation: gradient-flow 6s ease infinite;
+  background-size: 200% auto;
+}
+
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.03); /* More transparent */
+  --glass-border: rgba(255, 255, 255, 0.15); /* Thinner/lighter border */
+  --glass-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white font-sans overflow-x-hidden;
+    /* Prevent user selection for a more app-like feel if desired, though optional */
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-white/20 rounded-full;
+  }
+}
+
+@layer utilities {
+  .glass-3d {
+    background: var(--glass-bg);
+    backdrop-filter: blur(40px);
+    border: 1.5px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 40px 10px rgba(59, 130, 246, 0.3);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 40px 10px rgba(34, 197, 94, 0.3);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 40px 10px rgba(239, 68, 68, 0.3);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 40px 10px rgba(168, 85, 247, 0.3);
+  }
+
+  .glow-white {
+    box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.1);
+  }
+
+  .glow-red-strong {
+    box-shadow: 0 0 60px 15px rgba(220, 38, 38, 0.5);
+  }
+}
+
+/* Section glows can be optimized here or kept */
