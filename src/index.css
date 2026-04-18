@@ -3,12 +3,20 @@
 
 @theme {
   --font-sans: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+  
+  /* Navbar height for scroll-padding-top */
+  --spacing-nav-height: 80px;
 
   @keyframes gradient-flow {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
   }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--spacing-nav-height);
 }
 
 .animate-gradient-flow {
