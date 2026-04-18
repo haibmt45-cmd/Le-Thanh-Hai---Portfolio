@@ -24,8 +24,8 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
       }, 15); // Adjust speed
       return () => clearInterval(interval);
     } else if (percentage === 100 && index === 1) {
-      // Delay before slide up to see the 100%
-      const finalTimer = setTimeout(() => setIsExiting(true), 300);
+      // Significantly reduce delay before slide up to make it feel snappier.
+      const finalTimer = setTimeout(() => setIsExiting(true), 50);
       return () => clearTimeout(finalTimer);
     }
   }, [index, percentage]);
