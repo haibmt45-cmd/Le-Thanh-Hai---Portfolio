@@ -13,8 +13,11 @@ const TechnicalWork: React.FC = () => {
   ];
 
   const workHistory = [
-    { year: '2025 - Present', position: 'Marketing Executive', company: 'VGG' },
-    { year: '2023 - 2024', position: 'Account & Event Executive', company: 'Zunik' },
+    { year: '2025 - Present', position: 'Freelance Marketing', company: '' },
+    { year: '9/2025 - 2/2026', position: 'Account & Event Executive', company: 'Công ty TNHH Thương mại & Dịch vụ Zunik' },
+    { year: '2/2025 - 6/2025', position: 'Marketing Executive', company: 'Công ty TNHH Đầu tư & Sản xuất VGG' },
+    { year: '6/2024 - 8/2024', position: 'Thực tập sinh Marketing', company: 'Học viện Quốc tế Anh' },
+    { year: '6/2022 - 8/2022', position: 'Thực tập sinh Marketing', company: 'Thien An Holdings' },
   ];
 
   return (
@@ -25,8 +28,8 @@ const TechnicalWork: React.FC = () => {
         <div className="flex flex-col gap-6">
           <div className="mb-4">
              <span className="text-white/40 uppercase tracking-[0.3em] text-xs font-bold block mb-2">My Stack</span>
-             <h2 className="text-4xl lg:text-5xl font-black uppercase italic tracking-tighter leading-tight">
-                Technical <br/><span className="italic opacity-80">Mastery</span>
+             <h2 className="text-4xl lg:text-5xl font-black uppercase italic tracking-tighter leading-tight flex flex-col">
+                <span>Technical Mastery</span>
              </h2>
           </div>
           
@@ -55,8 +58,8 @@ const TechnicalWork: React.FC = () => {
         <div className="flex flex-col gap-6">
            <div className="mb-4">
              <span className="text-white/40 uppercase tracking-[0.3em] text-xs font-bold block mb-2">Timeline</span>
-             <h2 className="text-4xl lg:text-5xl font-black uppercase italic tracking-tighter leading-tight">
-                Work <br/><span className="italic opacity-80">History</span>
+             <h2 className="text-4xl lg:text-5xl font-black uppercase italic tracking-tighter leading-tight flex flex-col">
+                <span>Work History</span>
              </h2>
           </div>
 
