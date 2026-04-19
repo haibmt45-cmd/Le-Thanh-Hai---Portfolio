@@ -4,15 +4,6 @@ import { Facebook, Phone, Mail, Instagram, MessageCircle } from 'lucide-react';
 import GlassCard from '../components/GlassCard';
 
 const Contact: React.FC = () => {
-  const tools = [
-    { name: 'Ps', color: 'text-blue-500' },
-    { name: 'Ai', color: 'text-orange-500' },
-    { name: 'Lr', color: 'text-blue-300' },
-    { name: 'Pr', color: 'text-purple-500' },
-    { name: 'CapCut', color: 'text-white' },
-    { name: 'AI Stack', color: 'text-green-400' },
-  ];
-
   const socialLinks = [
     { 
       name: 'Facebook', 
@@ -61,54 +52,17 @@ const Contact: React.FC = () => {
 
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-white/20 to-transparent" />
       
-      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 relative z-10">
+      <div className="max-w-4xl w-full relative z-10 flex flex-col items-center">
         
-        {/* Left Column: Technical Mastery */}
-        <div className="flex flex-col gap-6">
-          <div className="mb-4">
-             <span className="text-white/40 uppercase tracking-[0.3em] text-xs font-bold block mb-2">Capabilities</span>
-             <h2 className="text-4xl lg:text-6xl font-black uppercase italic tracking-tighter leading-tight">
-                <span className="italic opacity-80">Technical</span> <br/>Mastery
-             </h2>
-          </div>
-          
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-            <GlassCard className="col-span-2 flex flex-col justify-center p-8 bg-blue-500/5" glowColor="blue">
-               <h3 className="text-xl font-bold mb-2">Creative Suite</h3>
-               <p className="text-white/40 text-sm">Thông thạo bộ công cụ sáng tạo tối ưu nhất cho Event & Marketing.</p>
-            </GlassCard>
-            
-            {tools.slice(0, 1).map((tool, i) => (
-              <GlassCard key={i} className="flex items-center justify-center aspect-square" glowColor="white">
-                 <span className={`text-4xl font-bold uppercase tracking-tighter ${tool.color}`}>{tool.name}</span>
-              </GlassCard>
-            ))}
-
-            {tools.slice(1).map((tool, i) => (
-              <GlassCard key={i} className="flex items-center justify-center aspect-square" glowColor="white">
-                 <span className={`text-3xl font-bold uppercase tracking-tighter ${tool.color}`}>{tool.name}</span>
-              </GlassCard>
-            ))}
-            
-            <GlassCard className="col-span-2 flex items-center p-8 bg-gradient-to-r from-green-500/10 to-transparent shadow-lg shadow-green-500/5 group" glowColor="green">
-               <div className="flex flex-col">
-                  <span className="text-[10px] uppercase tracking-[0.5em] text-green-400 font-bold mb-2 opacity-60">Strategic Edge</span>
-                  <p className="text-3xl font-black italic tracking-tighter text-white">AI-POWERED WORKFLOW</p>
-               </div>
-            </GlassCard>
-          </div>
+        {/* Let's Connect */}
+        <div className="text-center mb-16">
+           <span className="text-white/40 uppercase tracking-[0.3em] text-xs font-bold block mb-2">Network</span>
+           <h2 className="text-5xl lg:text-7xl font-black uppercase italic tracking-tighter leading-tight">
+              Let's <br/><span className="italic opacity-80">Connect</span>
+           </h2>
         </div>
 
-        {/* Right Column: Let's Connect */}
-        <div className="flex flex-col gap-6">
-          <div className="mb-4 lg:text-right">
-             <span className="text-white/40 uppercase tracking-[0.3em] text-xs font-bold block mb-2">Network</span>
-             <h2 className="text-4xl lg:text-6xl font-black uppercase italic tracking-tighter leading-tight">
-                Let's <br/><span className="italic opacity-80">Connect</span>
-             </h2>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4 flex-grow">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
              {socialLinks.map((social, i) => (
                <a 
                 key={i} 
@@ -127,19 +81,17 @@ const Contact: React.FC = () => {
                   <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                </a>
              ))}
-          </div>
-
-          <GlassCard className="mt-4 flex items-center justify-between p-8 border-white/10" glowColor="white">
-             <div>
-                <p className="text-[10px] text-white/40 mb-1 uppercase tracking-widest font-bold">Location</p>
-                <p className="font-bold tracking-tight">Vietnam — Ho Chi Minh City</p>
-             </div>
-             <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-             </div>
-          </GlassCard>
         </div>
 
+        <GlassCard className="mt-12 flex items-center justify-between p-8 border-white/10 w-full" glowColor="white">
+           <div>
+              <p className="text-[10px] text-white/40 mb-1 uppercase tracking-widest font-bold">Location</p>
+              <p className="font-bold tracking-tight">Vietnam — Ho Chi Minh City</p>
+           </div>
+           <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+           </div>
+        </GlassCard>
       </div>
 
       {/* Footer */}

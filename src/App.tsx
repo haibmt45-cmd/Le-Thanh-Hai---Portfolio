@@ -6,6 +6,7 @@ import ShootingStars from './components/ShootingStars';
 import LoadingScreen from './components/LoadingScreen';
 import Hero from './sections/Hero';
 import Visuals from './sections/Visuals';
+import TechnicalWork from './sections/TechnicalWork';
 import ZunikEvent from './sections/ZunikEvent';
 import VGGMarketing from './sections/VGGMarketing';
 import PersonalProjects from './sections/PersonalProjects';
@@ -17,7 +18,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'visuals', 'zunik', 'vgg', 'personal', 'contact'];
+      const sections = ['hero', 'visuals', 'technical-work', 'zunik', 'vgg', 'personal', 'contact'];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -55,6 +56,7 @@ export default function App() {
         {[ 
           { label: 'Intro', href: '#hero', id: 'hero' }, 
           { label: 'Visuals', href: '#visuals', id: 'visuals' }, 
+          { label: 'Mastery', href: '#technical-work', id: 'technical-work' },
           { label: 'Event', href: '#zunik', id: 'zunik' }, 
           { label: 'Marketing', href: '#vgg', id: 'vgg' }, 
           { label: 'Projects', href: '#personal', id: 'personal' },
@@ -78,6 +80,7 @@ export default function App() {
       >
         <Hero />
         <Visuals />
+        <TechnicalWork />
         <ZunikEvent />
         <VGGMarketing />
         <PersonalProjects />
