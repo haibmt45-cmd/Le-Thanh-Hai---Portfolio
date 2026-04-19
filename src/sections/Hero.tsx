@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
             </span>
           </h1>
           <p className="text-xl text-white/60 mb-10 max-w-2xl leading-relaxed">
-            Chuyên viên Event & Marketing Executive.<br className="hidden md:block" />
+            Marketing Executive.<br className="hidden md:block" />
             Tối ưu <span className="text-white font-bold">30% hiệu suất</span> bằng <span className="whitespace-nowrap">giải pháp trí tuệ nhân tạo (AI Stack).</span>
           </p>
           
