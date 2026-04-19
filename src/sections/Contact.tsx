@@ -144,7 +144,7 @@ const Contact: React.FC = () => {
 
       {/* Footer */}
       <footer className="mt-24 pt-12 border-t border-white/10 w-full text-center">
-         <p className="text-white/20 text-xs uppercase tracking-[0.5em]">&copy; 2026 Created by Lê Thanh Hải.</p>
+         <p className="text-white/20 text-xs uppercase tracking-[0.5em]">&copy; Created by Le Thanh Hai using 100% AI.</p>
       </footer>
     </section>
   );
