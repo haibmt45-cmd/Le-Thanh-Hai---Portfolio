@@ -30,8 +30,8 @@ const Hero: React.FC = () => {
             </span>
             {/* Gradient text */}
             <span className="text-[10px] sm:text-xs md:text-[11px] font-extrabold tracking-[0.2em] uppercase text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-purple-300 flex flex-col items-center gap-1 text-center">
-              <span className="whitespace-nowrap">Tân cử nhân Loại giỏi khoa Quan hệ công chúng - Truyền thông</span>
-              <span className="whitespace-nowrap">Trường Đại học Văn Lang</span>
+              <span>Tân cử nhân khoa Quan hệ công chúng - Truyền thông</span>
+              <span>Trường Đại học Văn Lang</span>
             </span>
           </div>
           <h1 className="leading-tight tracking-tight mb-8">
