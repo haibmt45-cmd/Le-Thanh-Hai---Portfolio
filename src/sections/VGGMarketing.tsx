@@ -57,7 +57,7 @@ const VGGMarketing: React.FC = () => {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((item, i) => (
-            <GlassCard key={item.name} className="p-2 group cursor-pointer hover:-translate-y-2 hover:border-red-400/40 hover:shadow-[0_20px_40px_-5px_rgba(239,68,68,0.3)] transition-all duration-500" glowColor="red">
+            <GlassCard key={item.name} className="p-2 group cursor-default hover:-translate-y-2 hover:border-red-400/40 hover:shadow-[0_20px_40px_-5px_rgba(239,68,68,0.3)] transition-all duration-500" glowColor="red">
               <div className="relative overflow-hidden rounded-2xl transform-gpu">
                 <img 
                   src={item.img} 

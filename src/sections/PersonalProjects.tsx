@@ -75,7 +75,7 @@ const PersonalProjects: React.FC = () => {
             <GlassCard 
               key={i} 
               delay={i * 0.15} 
-              className="p-3 border-blue-400/30 group cursor-pointer hover:-translate-y-4 hover:border-blue-400 hover:shadow-[0_20px_50px_-5px_rgba(37,99,235,0.4)] transition-all duration-500" 
+              className="p-3 border-blue-400/30 group cursor-default hover:-translate-y-4 hover:border-blue-400 hover:shadow-[0_20px_50px_-5px_rgba(37,99,235,0.4)] transition-all duration-500" 
               glowColor="blue"
             >
               <div className="relative overflow-hidden rounded-2xl aspect-[4/3]">

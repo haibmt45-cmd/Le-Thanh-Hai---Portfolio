@@ -56,7 +56,7 @@ const ZunikEvent: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, idx) => (
-            <GlassCard key={idx} className="group cursor-pointer hover:-translate-y-2 hover:border-purple-400/40 hover:shadow-[0_20px_40px_-5px_rgba(168,85,247,0.3)] transition-all duration-500" glowColor="purple">
+            <GlassCard key={idx} className="group cursor-default hover:-translate-y-2 hover:border-purple-400/40 hover:shadow-[0_20px_40px_-5px_rgba(168,85,247,0.3)] transition-all duration-500" glowColor="purple">
               <div className="aspect-video overflow-hidden rounded-xl mb-6 relative transform-gpu">
                 <img 
                   src={project.image} 
@@ -66,15 +66,6 @@ const ZunikEvent: React.FC = () => {
                 />
                 {/* Inner shadow overlay for depth */}
                 <div className="absolute inset-0 z-10 pointer-events-none shadow-[inset_0_0_30px_rgba(0,0,0,0.6)] rounded-xl transition-opacity duration-500 group-hover:opacity-50" />
-                
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20 rounded-xl">
-                   <a 
-                    href={project.url} 
-                    className="text-white font-bold border-2 border-white px-6 py-2 rounded-full transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 shadow-[0_0_15px_rgba(255,255,255,0.3)]"
-                   >
-                    CHI TIẾT DỰ ÁN
-                   </a>
-                </div>
               </div>
               <h3 className="text-2xl font-bold mb-2 group-hover:text-purple-300 transition-colors duration-300">{project.title}</h3>
               <p className="text-white/40 group-hover:text-white/60 transition-colors duration-300">{project.desc}</p>

@@ -41,7 +41,7 @@ const Visuals: React.FC = () => {
       <div className="mb-12">
         <Marquee direction="right" speed={40}>
           {row1.map((src, i) => (
-            <div key={i} className="group relative w-[450px] h-[300px] shrink-0 mx-4 cursor-pointer rounded-[24px]">
+            <div key={i} className="group relative w-[450px] h-[300px] shrink-0 mx-4 cursor-default rounded-[24px]">
               {/* Soft Border Glow - Wraps outside the image precisely */}
               <div className="absolute -inset-[2px] rounded-[24px] bg-gradient-to-r from-cyan-500/0 to-blue-500/0 group-hover:from-cyan-400/50 group-hover:to-blue-500/50 blur-[8px] opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none" />
               
@@ -66,7 +66,7 @@ const Visuals: React.FC = () => {
       <div>
         <Marquee direction="left" speed={35}>
           {row2.map((src, i) => (
-            <div key={i} className="group relative w-[300px] h-[450px] shrink-0 mx-4 cursor-pointer rounded-[24px]">
+            <div key={i} className="group relative w-[300px] h-[450px] shrink-0 mx-4 cursor-default rounded-[24px]">
               {/* Soft Border Glow - Wraps outside the image precisely */}
               <div className="absolute -inset-[2px] rounded-[24px] bg-gradient-to-r from-purple-500/0 to-fuchsia-500/0 group-hover:from-purple-400/50 group-hover:to-fuchsia-500/50 blur-[8px] opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none" />
               
