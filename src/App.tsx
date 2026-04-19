@@ -56,7 +56,7 @@ export default function App() {
         {[ 
           { label: 'Intro', href: '#hero', id: 'hero' }, 
           { label: 'Visuals', href: '#visuals', id: 'visuals' }, 
-          { label: 'Mastery', href: '#technical-work', id: 'technical-work' },
+          { label: 'Summary', href: '#technical-work', id: 'technical-work' },
           { label: 'Event', href: '#zunik', id: 'zunik' }, 
           { label: 'Marketing', href: '#vgg', id: 'vgg' }, 
           { label: 'Projects', href: '#personal', id: 'personal' },

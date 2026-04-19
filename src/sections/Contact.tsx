@@ -58,7 +58,7 @@ const Contact: React.FC = () => {
         <div className="text-center mb-16">
            <span className="text-white/40 uppercase tracking-[0.3em] text-xs font-bold block mb-2">Network</span>
            <h2 className="text-5xl lg:text-7xl font-black uppercase italic tracking-tighter leading-tight">
-              Let's <br/><span className="italic opacity-80">Connect</span>
+              Let's <span className="italic opacity-80">Connect</span>
            </h2>
         </div>
 
