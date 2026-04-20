@@ -79,7 +79,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, isLoading }) => {
       >
         <button 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="p-3 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white shadow-[0_0_15px_rgba(255,255,255,0.05)] outline-none"
+          className="p-3 rounded-full bg-black/60 backdrop-blur-xl border border-white/20 text-white shadow-[0_0_20px_rgba(255,255,255,0.1)] outline-none"
         >
           {isMobileMenuOpen ? <X className="w-5 h-5 text-white/90" /> : <Menu className="w-5 h-5 text-white/90" />}
         </button>
@@ -90,10 +90,10 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, isLoading }) => {
         initial={{ y: -100, opacity: 0 }}
         animate={!isLoading ? { y: 0, opacity: 1 } : { y: -100, opacity: 0 }}
         transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-        className="hidden sm:flex fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-black/40 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] rounded-full px-8 py-2.5 items-center gap-10 text-xs font-bold uppercase tracking-widest text-white/70"
+        className="hidden sm:flex fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-black/50 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.5),0_0_20px_rgba(255,255,255,0.05)] rounded-full px-8 py-2.5 items-center gap-10 text-xs font-bold uppercase tracking-widest text-white/80"
       >
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-full bg-cyan-900/10 blur-xl pointer-events-none" />
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-full bg-cyan-900/20 blur-xl pointer-events-none" />
 
         {navItems.map(item => (
           <div 
