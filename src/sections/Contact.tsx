@@ -2,8 +2,10 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Facebook, Phone, Mail, Instagram, MessageCircle } from 'lucide-react';
 import GlassCard from '../components/GlassCard';
+import { useI18n } from '../context/I18nContext';
 
 const Contact: React.FC = () => {
+  const { t } = useI18n();
   const socialLinks = [
     { 
       name: 'Facebook', 
@@ -56,9 +58,9 @@ const Contact: React.FC = () => {
         
         {/* Let's Connect */}
         <div className="text-center mb-16">
-           <span className="text-white/40 uppercase tracking-[0.3em] text-xs font-bold block mb-2">Network</span>
+           <span className="text-white/40 uppercase tracking-[0.3em] text-xs font-bold block mb-2">{t('contact.network')}</span>
            <h2 className="text-5xl lg:text-7xl font-black uppercase italic tracking-tighter leading-tight">
-              Let's <span className="italic opacity-80">Connect</span>
+              {t('contact.lets_connect').split(' ')[0]} <span className="italic opacity-80">{t('contact.lets_connect').split(' ')[1] || 'Connect'}</span>
            </h2>
         </div>
 
@@ -85,8 +87,8 @@ const Contact: React.FC = () => {
 
         <GlassCard className="mt-12 flex items-center justify-between p-8 border-white/10 w-full" glowColor="white">
            <div>
-              <p className="text-[10px] text-white/40 mb-1 uppercase tracking-widest font-bold">Location</p>
-              <p className="font-bold tracking-tight">Vietnam — Ho Chi Minh City</p>
+              <p className="text-[10px] text-white/40 mb-1 uppercase tracking-widest font-bold">{t('contact.location_label')}</p>
+              <p className="font-bold tracking-tight">{t('contact.location')}</p>
            </div>
            <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
@@ -96,7 +98,7 @@ const Contact: React.FC = () => {
 
       {/* Footer */}
       <footer className="mt-24 pt-12 border-t border-white/10 w-full text-center">
-         <p className="text-white/20 text-xs uppercase tracking-[0.5em]">&copy; Created by Le Thanh Hai using 100% AI.</p>
+         <p className="text-white/20 text-xs uppercase tracking-[0.5em]">{t('contact.footer')}</p>
       </footer>
     </section>
   );

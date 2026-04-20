@@ -2,8 +2,10 @@ import React from 'react';
 import { motion } from 'motion/react';
 import GlassCard from '../components/GlassCard';
 import Marquee from '../components/Marquee';
+import { useI18n } from '../context/I18nContext';
 
 const Hero: React.FC = () => {
+  const { t } = useI18n();
   const aiLogos = [
     { name: 'Gemini', icon: 'https://pnglove.com/data/img/3519_VWHm.jpg' },
     { name: 'Sora', icon: 'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/sora-color.png' },
@@ -30,38 +32,38 @@ const Hero: React.FC = () => {
             </span>
             {/* Gradient text */}
             <span className="text-[10px] sm:text-xs md:text-[11px] font-extrabold tracking-[0.2em] uppercase text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-purple-300 flex flex-col items-center gap-1 text-center">
-              <span>Tân cử nhân khoa Quan hệ công chúng - Truyền thông</span>
-              <span>Trường Đại học Văn Lang</span>
+              <span>{t('hero.tagline1')}</span>
+              <span>{t('hero.tagline2')}</span>
             </span>
           </div>
           <h1 className="leading-tight tracking-tight mb-8">
             <span className="relative inline-block text-5xl lg:text-6xl font-black italic uppercase tracking-tighter mb-10 group cursor-default">
-              Lê Thanh Hải
+              {t('hero.title')}
               {/* Liquid Glass Underline Effect */}
               <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-white to-purple-500 rounded-full blur-[1px] opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute -bottom-2 left-0 w-full h-[4px] bg-white/10 backdrop-blur-md rounded-full border-t border-white/20 shadow-[0_0_10px_rgba(255,255,255,0.1)]" />
             </span>
             <br />
             <span className="text-2xl lg:text-4xl font-bold text-white/90 block mb-2 italic">
-              Kiến tạo trải nghiệm.
+              {t('hero.subtitle1')}
             </span>
             <span className="text-2xl lg:text-4xl font-bold text-white/90 block italic">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-white to-purple-400">
-                Duy mĩ trong truyền thông.
+                {t('hero.subtitle2')}
               </span>
             </span>
           </h1>
           <p className="text-xl text-white/60 mb-10 max-w-2xl leading-relaxed">
-            Marketing Executive.<br className="hidden md:block" />
-            Tối ưu <span className="text-white font-bold">30% hiệu suất</span> bằng <span className="whitespace-nowrap">giải pháp trí tuệ nhân tạo (AI Stack).</span>
+            {t('hero.desc1')}<br className="hidden md:block" />
+            {t('hero.desc2_1')}<span className="text-white font-bold">{t('hero.desc2_highlight')}</span> {t('hero.desc2_2')}<span className="whitespace-nowrap">{t('hero.desc2_highlight2')}</span>
           </p>
           
           <div className="flex gap-4">
             <a href="#contact" className="glass-3d px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform active:scale-95 glow-blue">
-               Liên hệ ngay
+               {t('hero.btn_contact')}
             </a>
             <a href="#visuals" className="px-8 py-4 rounded-full font-bold border border-white/20 hover:bg-white/10 transition-colors">
-               Xem Portfolio
+               {t('hero.btn_portfolio')}
             </a>
           </div>
         </motion.div>

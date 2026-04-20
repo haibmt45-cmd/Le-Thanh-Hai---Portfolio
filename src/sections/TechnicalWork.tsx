@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import GlassCard from '../components/GlassCard';
+import { useI18n } from '../context/I18nContext';
 
 const TechnicalWork: React.FC = () => {
+  const { t } = useI18n();
   const tools = [
     { name: 'Ps', color: 'text-blue-500' },
     { name: 'Ai', color: 'text-orange-500' },
@@ -13,11 +15,11 @@ const TechnicalWork: React.FC = () => {
   ];
 
   const workHistory = [
-    { year: '2025 - Present', position: 'Freelance Marketing', company: '' },
-    { year: '9/2025 - 2/2026', position: 'Account & Event Executive', company: 'Công ty TNHH Thương mại & Dịch vụ Zunik' },
-    { year: '2/2025 - 6/2025', position: 'Marketing Executive', company: 'Công ty TNHH Đầu tư & Sản xuất VGG' },
-    { year: '6/2024 - 8/2024', position: 'Thực tập sinh Marketing', company: 'Học viện Quốc tế Anh' },
-    { year: '6/2022 - 8/2022', position: 'Thực tập sinh Marketing', company: 'Thien An Holdings' },
+    { year: t('technical.jobs.j1.year') || '2025 - Present', position: t('technical.jobs.j1.position'), company: t('technical.jobs.j1.company') },
+    { year: t('technical.jobs.j2.year'), position: t('technical.jobs.j2.position'), company: t('technical.jobs.j2.company') },
+    { year: t('technical.jobs.j3.year'), position: t('technical.jobs.j3.position'), company: t('technical.jobs.j3.company') },
+    { year: t('technical.jobs.j4.year'), position: t('technical.jobs.j4.position'), company: t('technical.jobs.j4.company') },
+    { year: t('technical.jobs.j5.year'), position: t('technical.jobs.j5.position'), company: t('technical.jobs.j5.company') },
   ];
 
   return (
@@ -27,16 +29,16 @@ const TechnicalWork: React.FC = () => {
         {/* Technical Mastery */}
         <div className="flex flex-col gap-6">
           <div className="mb-4">
-             <span className="text-white/40 uppercase tracking-[0.3em] text-xs font-bold block mb-2">My Stack</span>
+             <span className="text-white/40 uppercase tracking-[0.3em] text-xs font-bold block mb-2">{t('technical.stack_subtitle')}</span>
              <h2 className="text-4xl lg:text-5xl font-black uppercase italic tracking-tighter leading-tight flex flex-col">
-                <span>Technical Mastery</span>
+                <span>{t('technical.stack_title')}</span>
              </h2>
           </div>
           
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             <GlassCard className="col-span-2 flex flex-col justify-center p-8 bg-blue-500/5 items-center text-center" glowColor="blue">
-               <h3 className="text-xl font-bold mb-2">Creative Suite</h3>
-               <p className="text-white/40 text-sm">Thông thạo bộ công cụ sáng tạo tối ưu nhất cho Event & Marketing.</p>
+               <h3 className="text-xl font-bold mb-2">{t('technical.creative_suite')}</h3>
+               <p className="text-white/40 text-sm">{t('technical.creative_desc')}</p>
             </GlassCard>
             
             {tools.map((tool, i) => (
@@ -47,8 +49,8 @@ const TechnicalWork: React.FC = () => {
             
             <GlassCard className="col-span-2 flex items-center p-8 bg-gradient-to-r from-green-500/10 to-transparent shadow-lg shadow-green-500/5 group" glowColor="green">
                <div className="flex flex-col">
-                  <span className="text-[10px] uppercase tracking-[0.5em] text-green-400 font-bold mb-2 opacity-60">Strategic Edge</span>
-                  <p className="text-2xl font-black italic tracking-tighter text-white">AI-POWERED WORKFLOW</p>
+                  <span className="text-[10px] uppercase tracking-[0.5em] text-green-400 font-bold mb-2 opacity-60">{t('technical.strategic_edge')}</span>
+                  <p className="text-2xl font-black italic tracking-tighter text-white">{t('technical.ai_workflow')}</p>
                </div>
             </GlassCard>
           </div>
@@ -57,9 +59,9 @@ const TechnicalWork: React.FC = () => {
         {/* Work History */}
         <div className="flex flex-col gap-6">
            <div className="mb-4">
-             <span className="text-white/40 uppercase tracking-[0.3em] text-xs font-bold block mb-2">Timeline</span>
+             <span className="text-white/40 uppercase tracking-[0.3em] text-xs font-bold block mb-2">{t('technical.timeline_subtitle')}</span>
              <h2 className="text-4xl lg:text-5xl font-black uppercase italic tracking-tighter leading-tight flex flex-col">
-                <span>Work History</span>
+                <span>{t('technical.timeline_title')}</span>
              </h2>
           </div>
 

@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import GlassCard from '../components/GlassCard';
+import { useI18n } from '../context/I18nContext';
 
 const AboutMe: React.FC = () => {
+  const { t } = useI18n();
   return (
     <section id="about" className="py-32 px-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
@@ -29,22 +31,21 @@ const AboutMe: React.FC = () => {
 
           {/* Text */}
           <div className="flex flex-col gap-6">
-            <span className="text-white/40 uppercase tracking-[0.3em] text-xs font-bold block">About Me</span>
+            <span className="text-white/40 uppercase tracking-[0.3em] text-xs font-bold block">{t('about.section_title')}</span>
             <h2 className="text-4xl lg:text-7xl font-black uppercase italic tracking-tighter leading-tight">
-               Who am <span className="italic opacity-80">I?</span>
+               {t('about.main_title1')} <span className="italic opacity-80">{t('about.main_title2')}</span>
             </h2>
             
             <div className="flex items-center gap-4 text-white/50 text-sm font-bold uppercase tracking-widest">
-              <span>Date of birth: <span className="text-white bg-white/10 px-3 py-1 rounded-full border border-white/20">21 - 10 - 2003</span></span>
+              <span>{t('about.dob_label')} <span className="text-white bg-white/10 px-3 py-1 rounded-full border border-white/20">{t('about.dob_value')}</span></span>
             </div>
             
             <GlassCard className="p-8 border border-white/10" glowColor="purple">
               <p className="text-white/80 text-lg leading-relaxed">
-                Em là Lê Thanh Hải, hiện đang hoạt động trong lĩnh vực <strong className="text-white">Marketing Executive</strong>. 
-                Trong quá trình làm việc, em luôn cố gắng kết hợp tư duy thẩm mỹ và việc ứng dụng công nghệ AI để hỗ trợ <strong className="text-white">xây dựng chiến lược</strong>, 
-                tối ưu hóa quy trình <strong className="text-white">tối ưu hóa tỷ lệ chuyển đổi</strong> cũng như chất lượng sản xuất nội dung. 
-                Với tinh thần cầu tiến và không ngừng học hỏi, em xem mỗi dự án là cơ hội để cải thiện quy trình làm việc hướng tới <strong className="text-white">tăng trưởng bền vững</strong>. 
-                Em ưu tiên sự tỉ mỉ trong từng chi tiết và luôn mong muốn đóng góp những giải pháp thiết thực, phù hợp với mục tiêu thực tế của doanh nghiệp.
+                {t('about.desc_part1')}<strong className="text-white">{t('about.desc_role')}</strong>{t('about.desc_part2')} 
+                <strong className="text-white">{t('about.desc_highlight1')}</strong>{t('about.desc_part3')} 
+                <strong className="text-white">{t('about.desc_highlight2')}</strong>{t('about.desc_part4')}
+                <strong className="text-white">{t('about.desc_highlight3')}</strong>{t('about.desc_part5')}
               </p>
             </GlassCard>
 
@@ -55,7 +56,7 @@ const AboutMe: React.FC = () => {
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-white text-black font-bold rounded-full transition-all duration-300 hover:shadow-[0_0_20px_2px_rgba(255,255,255,0.6)] hover:scale-105"
               >
-                Xem hồ sơ năng lực
+                {t('about.btn_cv')}
               </a>
             </div>
           </div>

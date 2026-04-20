@@ -1,8 +1,10 @@
 import React from 'react';
 import Marquee from '../components/Marquee';
 import GlassCard from '../components/GlassCard';
+import { useI18n } from '../context/I18nContext';
 
 const Visuals: React.FC = () => {
+  const { t } = useI18n();
   const row1 = [
     'https://drive.google.com/thumbnail?id=1rJqzbmyYkFNe-XYW9bm36UOLFWsYe6ni&sz=w1000',
     'https://drive.google.com/thumbnail?id=1rKYhu6co_OEf_-phScRn3Sbq411Tiuef&sz=w1000',
@@ -31,9 +33,9 @@ const Visuals: React.FC = () => {
       </div>
 
       <div className="px-6 mb-20 text-center relative z-10">
-        <span className="text-white/40 uppercase tracking-[0.5em] text-[10px] font-bold block mb-4">Portfolio</span>
+        <span className="text-white/40 uppercase tracking-[0.5em] text-[10px] font-bold block mb-4">{t('visuals.section_title')}</span>
         <h2 className="text-5xl lg:text-8xl font-black uppercase italic tracking-tighter leading-none">
-          <span className="italic opacity-80">Vision</span> <br/> <span className="italic opacity-80">Visual</span> Me
+          <span className="italic opacity-80">{t('visuals.main_title1')}</span> <br/> <span className="italic opacity-80">{t('visuals.main_title_amp') || '&'}</span> {t('visuals.main_title2')}
         </h2>
       </div>
 

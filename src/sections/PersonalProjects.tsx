@@ -2,8 +2,15 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Guitar, AudioLines } from 'lucide-react';
 import GlassCard from '../components/GlassCard';
+import { useI18n } from '../context/I18nContext';
 
 const PersonalProjects: React.FC = () => {
+  const { t } = useI18n();
+
+  // Safe fallback for tags
+  const defaultTags = ['Photography & Retouch', 'Cinematic Video', 'Bassist (Musicality)'];
+  const tags = (t('personal.tags') as unknown as string[]) || defaultTags;
+
   const images = [
     { src: 'https://drive.google.com/thumbnail?id=1eNsJvGmiLgXHTjKqH7fksDTOeI7uNodO&sz=w1000', alt: 'Personal Project 1' },
     { src: 'https://drive.google.com/thumbnail?id=1w0dPAl8fHRcFgu5A5AieyoGjpafvHsX9&sz=w1000', alt: 'Personal Project 2' },
@@ -41,23 +48,23 @@ const PersonalProjects: React.FC = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-20 text-center">
-          <span className="text-white/40 uppercase tracking-[0.5em] text-[10px] font-bold block mb-4 mx-auto">03. Personal</span>
+          <span className="text-white/40 uppercase tracking-[0.5em] text-[10px] font-bold block mb-4 mx-auto">{t('personal.section_title')}</span>
           <h2 className="text-4xl lg:text-7xl font-black uppercase italic tracking-tighter leading-tight mb-12">
-            <span className="italic opacity-80">Personal</span> Projects
+            <span className="italic opacity-80">{t('personal.main_title1')}</span> {t('personal.main_title2')}
           </h2>
 
           <div className="flex flex-col items-center gap-8 w-full max-w-4xl mx-auto relative z-10">
             <h3 className="text-2xl md:text-3xl font-bold font-serif text-white flex items-center justify-center gap-3">
               <Guitar className="w-8 h-8 text-white/80" />
-              Photography & Video & Bassist
+              {t('personal.subtitle')}
               <AudioLines className="w-8 h-8 text-white/80" />
             </h3>
             <p className="text-white/60 text-lg md:text-xl leading-relaxed text-center">
-              Em không chỉ làm sự kiện, em sống cùng nghệ thuật. Nhiếp ảnh cho em sự tỉ mỉ, quay phim dạy em cách kể chuyện, còn những đêm chơi Bass trong ban nhạc mang lại cho em tư duy về nhịp điệu, cảm âm.
+              {t('personal.desc')}
             </p>
             
             <div className="flex flex-wrap justify-center gap-4 mt-6">
-              {['Photography & Retouch', 'Cinematic Video', 'Bassist (Musicality)'].map(tag => (
+              {(Array.isArray(tags) ? tags : defaultTags).map(tag => (
                 <span 
                   key={tag} 
                   className="px-5 py-2.5 rounded-full border border-blue-400/30 bg-gradient-to-r from-blue-900/40 to-cyan-800/40 text-cyan-300 shadow-[0_0_15px_rgba(56,189,248,0.2)] text-sm font-bold tracking-widest uppercase hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-[0_0_25px_rgba(34,211,238,0.4)] hover:text-white transition-all duration-300 cursor-default backdrop-blur-md"

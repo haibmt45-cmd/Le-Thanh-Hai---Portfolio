@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import Snowfall from './components/Snowfall';
 import BackgroundVideo from './components/BackgroundVideo';
 import ShootingStars from './components/ShootingStars';
@@ -12,10 +12,13 @@ import ZunikEvent from './sections/ZunikEvent';
 import VGGMarketing from './sections/VGGMarketing';
 import PersonalProjects from './sections/PersonalProjects';
 import Contact from './sections/Contact';
+import LanguageSwitcher from './components/LanguageSwitcher';
+import { useI18n } from './context/I18nContext';
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeSection, setActiveSection] = useState('hero');
+  const { t, lang } = useI18n();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,6 +46,8 @@ export default function App() {
       <BackgroundVideo />
       <Snowfall />
       <ShootingStars />
+      
+      {!isLoading && <LanguageSwitcher />}
 
       {/* Navigation (Animate from top) */}
       <motion.nav 
@@ -55,16 +60,16 @@ export default function App() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-full bg-blue-900/10 blur-xl pointer-events-none" />
 
         {[ 
-          { label: 'Intro', href: '#hero', id: 'hero' }, 
-          { label: 'Visuals', href: '#visuals', id: 'visuals' }, 
-          { label: 'About', href: '#about', id: 'about' },
-          { label: 'Summary', href: '#technical-work', id: 'technical-work' },
-          { label: 'Event', href: '#zunik', id: 'zunik' }, 
-          { label: 'Marketing', href: '#vgg', id: 'vgg' }, 
-          { label: 'Projects', href: '#personal', id: 'personal' },
-          { label: 'Contact', href: '#contact', id: 'contact' } 
+          { label: t('nav.intro'), href: '#hero', id: 'hero' }, 
+          { label: t('nav.visuals'), href: '#visuals', id: 'visuals' }, 
+          { label: t('nav.about'), href: '#about', id: 'about' },
+          { label: t('nav.summary'), href: '#technical-work', id: 'technical-work' },
+          { label: t('nav.event'), href: '#zunik', id: 'zunik' }, 
+          { label: t('nav.marketing'), href: '#vgg', id: 'vgg' }, 
+          { label: t('nav.projects'), href: '#personal', id: 'personal' },
+          { label: t('nav.contact'), href: '#contact', id: 'contact' } 
         ].map((item) => (
-          <a key={item.label} href={item.href} className="relative group hover:text-white transition-colors duration-300 py-1 flex flex-col items-center gap-1">
+          <a key={item.id} href={item.href} className="relative group hover:text-white transition-colors duration-300 py-1 flex flex-col items-center gap-1">
             <span className={`relative z-10 transition-all duration-300 ${activeSection === item.id ? 'text-white' : ''}`}>
               {item.label}
             </span>
@@ -80,14 +85,24 @@ export default function App() {
         transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
         className="relative z-10"
       >
-        <Hero />
-        <Visuals />
-        <AboutMe />
-        <TechnicalWork />
-        <ZunikEvent />
-        <VGGMarketing />
-        <PersonalProjects />
-        <Contact />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={lang}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Hero />
+            <Visuals />
+            <AboutMe />
+            <TechnicalWork />
+            <ZunikEvent />
+            <VGGMarketing />
+            <PersonalProjects />
+            <Contact />
+          </motion.div>
+        </AnimatePresence>
       </motion.div>
 
       {/* Global Ambient Glows */}
