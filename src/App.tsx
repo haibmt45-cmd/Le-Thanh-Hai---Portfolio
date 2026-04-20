@@ -24,7 +24,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'visuals', 'about', 'technical-work', 'zunik', 'vgg', 'personal', 'contact'];
+      const sections = ['hero', 'about', 'technical-work', 'zunik', 'vgg', 'personal', 'contact'];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -70,13 +70,13 @@ export default function App() {
             transition={{ duration: 0.3 }}
           >
             <Hero />
-            <Visuals />
             <AboutMe />
             <TechnicalWork />
             <ZunikEvent />
             <VGGMarketing />
             <PersonalProjects />
             <Contact />
+            <Visuals />
           </motion.div>
         </AnimatePresence>
       </motion.div>

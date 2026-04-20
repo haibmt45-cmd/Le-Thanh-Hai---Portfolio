@@ -96,10 +96,6 @@ const Contact: React.FC = () => {
         </GlassCard>
       </div>
 
-      {/* Footer */}
-      <footer className="mt-24 pt-12 border-t border-white/10 w-full text-center">
-         <p className="text-white/20 text-xs uppercase tracking-[0.5em]">{t('contact.footer')}</p>
-      </footer>
     </section>
   );
 };

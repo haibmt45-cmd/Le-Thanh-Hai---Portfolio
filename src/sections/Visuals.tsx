@@ -22,7 +22,7 @@ const Visuals: React.FC = () => {
   ];
 
   return (
-    <section id="visuals" className="py-24 overflow-hidden relative">
+    <div className="w-full pb-16 overflow-hidden relative">
       {/* Localized Light Beams (Hero Style) */}
       <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] pointer-events-none z-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent rotate-[15deg] blur-[2px] opacity-60" />
@@ -32,23 +32,23 @@ const Visuals: React.FC = () => {
         <div className="absolute bottom-1/4 right-1/3 w-64 h-64 bg-purple-500/20 blur-[100px] rounded-full animate-pulse delay-1000" />
       </div>
 
-      <div className="px-6 mb-20 text-center relative z-10">
-        <span className="text-white/40 uppercase tracking-[0.5em] text-[10px] font-bold block mb-4">{t('visuals.section_title')}</span>
-        <h2 className="text-5xl lg:text-8xl font-black uppercase italic tracking-tighter leading-none">
-          <span className="italic opacity-80">{t('visuals.main_title1')}</span> <br/> <span className="italic opacity-80">{t('visuals.main_title_amp') || '&'}</span> {t('visuals.main_title2')}
+      <div className="px-6 mb-14 text-center relative z-10 hidden">
+        <span className="text-white/40 uppercase tracking-[0.5em] text-[10px] font-bold block mb-3">{t('visuals.section_title')}</span>
+        <h2 className="text-4xl lg:text-6xl font-black uppercase italic tracking-tighter leading-none">
+          <span className="italic opacity-80">{t('visuals.main_title1')}</span>
         </h2>
       </div>
 
       {/* Row 1: Left to Right */}
-      <div className="mb-12">
+      <div className="mb-8">
         <Marquee direction="right" speed={40}>
           {row1.map((src, i) => (
-            <div key={i} className="group relative w-[450px] h-[300px] shrink-0 mx-4 cursor-default rounded-[24px]">
+            <div key={i} className="group relative w-[315px] h-[210px] shrink-0 mx-3 cursor-default rounded-[20px]">
               {/* Soft Border Glow - Wraps outside the image precisely */}
-              <div className="absolute -inset-[2px] rounded-[24px] bg-gradient-to-r from-cyan-500/0 to-blue-500/0 group-hover:from-cyan-400/50 group-hover:to-blue-500/50 blur-[8px] opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none" />
+              <div className="absolute -inset-[2px] rounded-[20px] bg-gradient-to-r from-cyan-500/0 to-blue-500/0 group-hover:from-cyan-400/50 group-hover:to-blue-500/50 blur-[6px] opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none" />
               
-              <GlassCard className="w-full h-full !p-0 !rounded-[24px] overflow-hidden border border-white/10 group-hover:border-cyan-300/40 relative z-10 hover:-translate-y-2 transition-all duration-500" glowColor="none">
-                <div className="relative w-full h-full rounded-[24px] overflow-hidden transform-gpu">
+              <GlassCard className="w-full h-full !p-0 !rounded-[20px] overflow-hidden border border-white/10 group-hover:border-cyan-300/40 relative z-10 hover:-translate-y-1.5 transition-all duration-500" glowColor="none">
+                <div className="relative w-full h-full rounded-[20px] overflow-hidden transform-gpu">
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/0 transition-colors duration-500 z-10 pointer-events-none" />
                   <img 
                     src={src} 
@@ -56,7 +56,7 @@ const Visuals: React.FC = () => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 relative z-0" 
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 border border-white/10 group-hover:border-cyan-200/50 rounded-[24px] z-20 pointer-events-none transition-colors duration-500" />
+                  <div className="absolute inset-0 border border-white/10 group-hover:border-cyan-200/50 rounded-[20px] z-20 pointer-events-none transition-colors duration-500" />
                 </div>
               </GlassCard>
             </div>
@@ -68,12 +68,12 @@ const Visuals: React.FC = () => {
       <div>
         <Marquee direction="left" speed={35}>
           {row2.map((src, i) => (
-            <div key={i} className="group relative w-[300px] h-[450px] shrink-0 mx-4 cursor-default rounded-[24px]">
+            <div key={i} className="group relative w-[210px] h-[315px] shrink-0 mx-3 cursor-default rounded-[20px]">
               {/* Soft Border Glow - Wraps outside the image precisely */}
-              <div className="absolute -inset-[2px] rounded-[24px] bg-gradient-to-r from-purple-500/0 to-fuchsia-500/0 group-hover:from-purple-400/50 group-hover:to-fuchsia-500/50 blur-[8px] opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none" />
+              <div className="absolute -inset-[2px] rounded-[20px] bg-gradient-to-r from-purple-500/0 to-fuchsia-500/0 group-hover:from-purple-400/50 group-hover:to-fuchsia-500/50 blur-[6px] opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none" />
               
-              <GlassCard className="w-full h-full !p-0 !rounded-[24px] overflow-hidden border border-white/10 group-hover:border-purple-300/40 relative z-10 hover:-translate-y-2 transition-all duration-500" glowColor="none">
-                <div className="relative w-full h-full rounded-[24px] overflow-hidden transform-gpu">
+              <GlassCard className="w-full h-full !p-0 !rounded-[20px] overflow-hidden border border-white/10 group-hover:border-purple-300/40 relative z-10 hover:-translate-y-1.5 transition-all duration-500" glowColor="none">
+                <div className="relative w-full h-full rounded-[20px] overflow-hidden transform-gpu">
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/0 transition-colors duration-500 z-10 pointer-events-none" />
                   <img 
                     src={src} 
@@ -81,14 +81,19 @@ const Visuals: React.FC = () => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 relative z-0" 
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 border border-white/10 group-hover:border-purple-200/50 rounded-[24px] z-20 pointer-events-none transition-colors duration-500" />
+                  <div className="absolute inset-0 border border-white/10 group-hover:border-purple-200/50 rounded-[20px] z-20 pointer-events-none transition-colors duration-500" />
                 </div>
               </GlassCard>
             </div>
           ))}
         </Marquee>
       </div>
-    </section>
+
+      {/* Footer Integrated */}
+      <div className="mt-16 pt-8 border-t border-white/10 w-full text-center relative z-10">
+         <p className="text-white/20 text-xs uppercase tracking-[0.5em]">{t('contact.footer')}</p>
+      </div>
+    </div>
   );
 };
 

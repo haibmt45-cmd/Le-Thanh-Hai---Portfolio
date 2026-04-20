@@ -11,7 +11,7 @@ export const translations = {
       contact: 'CONTACT',
       about_group: 'ABOUT',
       who_am_i: 'WHO AM I?',
-      vision: 'VISION & VISUAL ME',
+      vision: 'VISUALS',
       skills: 'SKILLS',
       projects_group: 'PROJECTS',
       personal: 'PERSONAL PROJECTS'
@@ -123,7 +123,7 @@ export const translations = {
     },
     visuals: {
       section_title: '03. Creative',
-      main_title1: 'Visuals',
+      main_title1: 'VISUALS',
       main_title_amp: '&',
       main_title2: 'Aesthetics',
       desc: 'Một số ấn phẩm thiết kế và hình ảnh em thực hiện trong quá trình làm việc.',
@@ -161,7 +161,7 @@ export const translations = {
       contact: 'CONTACT',
       about_group: 'ABOUT',
       who_am_i: 'WHO AM I?',
-      vision: 'VISION & VISUAL ME',
+      vision: 'VISUALS',
       skills: 'SKILLS',
       projects_group: 'PROJECTS',
       personal: 'PERSONAL PROJECTS'
@@ -273,7 +273,7 @@ export const translations = {
     },
     visuals: {
       section_title: '03. Creative',
-      main_title1: 'Visuals',
+      main_title1: 'VISUALS',
       main_title_amp: '&',
       main_title2: 'Aesthetics',
       desc: 'Selected professional aesthetics and design publications I created during my career.',

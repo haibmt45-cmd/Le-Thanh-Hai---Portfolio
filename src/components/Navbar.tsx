@@ -36,7 +36,6 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, isLoading }) => {
       label: t('nav.about_group'),
       children: [
         { id: 'about', label: t('nav.who_am_i') },
-        { id: 'visuals', label: t('nav.vision') },
         { id: 'technical-work', label: t('nav.skills') },
       ]
     },
