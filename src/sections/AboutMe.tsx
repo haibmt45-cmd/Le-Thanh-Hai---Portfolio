@@ -17,7 +17,7 @@ const AboutMe: React.FC = () => {
           >
             <GlassCard className="!p-0 overflow-hidden border border-white/10" glowColor="purple">
               <img 
-                src="https://drive.google.com/thumbnail?id=1oHO4kreco9ff_UzeniNEoXUf9JImcfsm&sz=w1000" 
+                src="https://drive.google.com/thumbnail?id=1sGp6gsRJ6TKIYHvdOsrgvAIphoyxupmL&sz=w1000" 
                 alt="About Me" 
                 className="w-full aspect-[4/5] object-cover" 
                 referrerPolicy="no-referrer"
@@ -33,17 +33,25 @@ const AboutMe: React.FC = () => {
             <h2 className="text-4xl lg:text-7xl font-black uppercase italic tracking-tighter leading-tight">
                Who am <span className="italic opacity-80">I?</span>
             </h2>
-            <p className="text-white/60 text-lg leading-relaxed">
-              Chào bạn, mình là Lê Thanh Hải - một người làm Marketing & Event với tư duy thẩm mỹ cao và đam mê ứng dụng công nghệ AI vào công việc. 
-              Mình tin rằng sự kết hợp giữa tư duy sáng tạo truyền thống và sức mạnh của công nghệ là chìa khóa để tạo nên những trải nghiệm thương hiệu đột phá.
-            </p>
-            <p className="text-white/60 text-lg leading-relaxed">
-              Với kinh nghiệm thực chiến từ các dự án sự kiện quy mô đến các chiến dịch Digital Marketing, mình luôn khao khát được học hỏi và chinh phục những thử thách mới.
-            </p>
+            
+            <GlassCard className="p-8 border border-white/10" glowColor="purple">
+              <p className="text-white/80 text-lg leading-relaxed">
+                Em là Lê Thanh Hải, hiện đang hoạt động trong lĩnh vực <strong className="text-white">Marketing Executive</strong>. 
+                Trong quá trình làm việc, em luôn cố gắng kết hợp tư duy thẩm mỹ và việc ứng dụng công nghệ AI để hỗ trợ <strong className="text-white">xây dựng chiến lược</strong>, 
+                tối ưu hóa quy trình <strong className="text-white">tối ưu hóa tỷ lệ chuyển đổi</strong> cũng như chất lượng sản xuất nội dung. 
+                Với tinh thần cầu tiến và không ngừng học hỏi, em xem mỗi dự án là cơ hội để cải thiện quy trình làm việc hướng tới <strong className="text-white">tăng trưởng bền vững</strong>. 
+                Em ưu tiên sự tỉ mỉ trong từng chi tiết và luôn mong muốn đóng góp những giải pháp thiết thực, phù hợp với mục tiêu thực tế của doanh nghiệp.
+              </p>
+            </GlassCard>
 
             <div className="flex gap-4 mt-4">
-              <a href="#contact" className="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-white/90 transition-colors">
-                Liên hệ với mình
+              <a 
+                href="https://drive.google.com/uc?export=download&id=1WJ7pLEfuIq68iSvLZu0dTYC4xStNCj6L" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-white text-black font-bold rounded-full transition-all duration-300 hover:shadow-[0_0_20px_2px_rgba(255,255,255,0.6)] hover:scale-105"
+              >
+                Xem hồ sơ năng lực
               </a>
             </div>
           </div>
