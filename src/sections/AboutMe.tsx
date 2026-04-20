@@ -50,7 +50,7 @@ const AboutMe: React.FC = () => {
 
             <div className="flex gap-4 mt-4">
               <a 
-                href="https://drive.google.com/uc?export=download&id=1WJ7pLEfuIq68iSvLZu0dTYC4xStNCj6L" 
+                href="https://drive.google.com/uc?export=download&id=1lIwcIdSSMHDEaOvT_KiKY_XW8LZEsOHJ" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-white text-black font-bold rounded-full transition-all duration-300 hover:shadow-[0_0_20px_2px_rgba(255,255,255,0.6)] hover:scale-105"
