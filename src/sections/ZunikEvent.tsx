@@ -10,28 +10,44 @@ const ZunikEvent: React.FC = () => {
   const projects = [
     { 
       title: t('zunik.projects.p1.title'), 
-      images: ['https://zunikevent.vn/wp-content/uploads/2025/10/HUY00851.jpg', 'https://zunikevent.vn/wp-content/uploads/2025/10/HUY00851.jpg', 'https://zunikevent.vn/wp-content/uploads/2025/10/HUY00851.jpg'], 
+      images: [
+        'https://zunikevent.vn/wp-content/uploads/2025/10/HUY00851.jpg', 
+        'https://zunikevent.vn/wp-content/uploads/2025/10/HUY01421-300x200.jpg', 
+        'https://zunikevent.vn/wp-content/uploads/2025/10/DSC00526-300x200.jpg'
+      ], 
       desc: t('zunik.projects.p1.desc'),
       role: t('zunik.projects.p1.role'),
       result: t('zunik.projects.p1.result'),
     },
     { 
       title: t('zunik.projects.p2.title'), 
-      images: ['https://drive.google.com/thumbnail?id=1dUwnbAenHp7LNrHUu9D5I-tY9X37O6xz&sz=w1000', 'https://drive.google.com/thumbnail?id=1dUwnbAenHp7LNrHUu9D5I-tY9X37O6xz&sz=w1000', 'https://drive.google.com/thumbnail?id=1dUwnbAenHp7LNrHUu9D5I-tY9X37O6xz&sz=w1000'], 
+      images: [
+        'https://drive.google.com/thumbnail?id=1dUwnbAenHp7LNrHUu9D5I-tY9X37O6xz&sz=w1000', 
+        'https://drive.google.com/thumbnail?id=1Y9-nOmhcLo0f_OkfG_9NNFfLSNUPPgOP&sz=w1000', 
+        'https://drive.google.com/thumbnail?id=1nyMkin0MYkhPuMNk_10Qt1fB6NMUA7SW&sz=w1000'
+      ], 
       desc: t('zunik.projects.p2.desc'),
       role: t('zunik.projects.p2.role'),
       result: t('zunik.projects.p2.result'),
     },
     { 
       title: t('zunik.projects.p3.title'), 
-      images: ['https://zunikevent.vn/wp-content/uploads/2026/04/612006996_919523067300799_6676736734415795302_n-2048x779.jpg', 'https://zunikevent.vn/wp-content/uploads/2026/04/612006996_919523067300799_6676736734415795302_n-2048x779.jpg', 'https://zunikevent.vn/wp-content/uploads/2026/04/612006996_919523067300799_6676736734415795302_n-2048x779.jpg'], 
+      images: [
+        'https://zunikevent.vn/wp-content/uploads/2026/04/612006996_919523067300799_6676736734415795302_n-2048x779.jpg', 
+        'https://drive.google.com/thumbnail?id=1iUrCpUOvh-CkNBXgtVtQiXlj_IZz5G-D&sz=w1000', 
+        'https://drive.google.com/thumbnail?id=1Ji-iznHlH1xHeEmIlBdO_XfjdWosAXiy&sz=w1000'
+      ], 
       desc: t('zunik.projects.p3.desc'),
       role: t('zunik.projects.p3.role'),
       result: t('zunik.projects.p3.result'),
     },
     { 
       title: t('zunik.projects.p4.title'), 
-      images: ['https://zunikevent.vn/wp-content/uploads/2026/03/TT_9739-2048x1365.jpg', 'https://zunikevent.vn/wp-content/uploads/2026/03/TT_9739-2048x1365.jpg', 'https://zunikevent.vn/wp-content/uploads/2026/03/TT_9739-2048x1365.jpg'], 
+      images: [
+        'https://zunikevent.vn/wp-content/uploads/2026/03/TT_9739-2048x1365.jpg', 
+        'https://drive.google.com/thumbnail?id=1T4z5EWVuNBYOGEshToEravb46g8hciRi&sz=w1000', 
+        'https://drive.google.com/thumbnail?id=1AM9Hm-riv4w1ivuTdtgYz2v_grMvNumB&sz=w1000'
+      ], 
       desc: t('zunik.projects.p4.desc'),
       role: t('zunik.projects.p4.role'),
       result: t('zunik.projects.p4.result'),
