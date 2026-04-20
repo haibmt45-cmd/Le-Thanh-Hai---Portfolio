@@ -34,6 +34,10 @@ const AboutMe: React.FC = () => {
                Who am <span className="italic opacity-80">I?</span>
             </h2>
             
+            <div className="flex items-center gap-4 text-white/50 text-sm font-bold uppercase tracking-widest">
+              <span>Date of birth: <span className="text-white bg-white/10 px-3 py-1 rounded-full border border-white/20">21 - 10 - 2003</span></span>
+            </div>
+            
             <GlassCard className="p-8 border border-white/10" glowColor="purple">
               <p className="text-white/80 text-lg leading-relaxed">
                 Em là Lê Thanh Hải, hiện đang hoạt động trong lĩnh vực <strong className="text-white">Marketing Executive</strong>. 
