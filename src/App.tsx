@@ -15,6 +15,8 @@ import Contact from './sections/Contact';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import { useI18n } from './context/I18nContext';
 
+import Navbar from './components/Navbar';
+
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeSection, setActiveSection] = useState('hero');
@@ -48,35 +50,9 @@ export default function App() {
       <ShootingStars />
       
       {!isLoading && <LanguageSwitcher />}
-
-      {/* Navigation (Animate from top) */}
-      <motion.nav 
-        initial={{ y: -100, opacity: 0 }}
-        animate={!isLoading ? { y: 0, opacity: 1 } : { y: -100, opacity: 0 }}
-        transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-        className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-black/40 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] rounded-full px-4 py-2 sm:px-8 sm:py-3 flex items-center gap-3 sm:gap-8 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/70 overflow-hidden"
-      >
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-full bg-blue-900/10 blur-xl pointer-events-none" />
-
-        {[ 
-          { label: t('nav.intro'), href: '#hero', id: 'hero' }, 
-          { label: t('nav.visuals'), href: '#visuals', id: 'visuals' }, 
-          { label: t('nav.about'), href: '#about', id: 'about' },
-          { label: t('nav.summary'), href: '#technical-work', id: 'technical-work' },
-          { label: t('nav.event'), href: '#zunik', id: 'zunik' }, 
-          { label: t('nav.marketing'), href: '#vgg', id: 'vgg' }, 
-          { label: t('nav.projects'), href: '#personal', id: 'personal' },
-          { label: t('nav.contact'), href: '#contact', id: 'contact' } 
-        ].map((item) => (
-          <a key={item.id} href={item.href} className="relative group hover:text-white transition-colors duration-300 py-1 flex flex-col items-center gap-1">
-            <span className={`relative z-10 transition-all duration-300 ${activeSection === item.id ? 'text-white' : ''}`}>
-              {item.label}
-            </span>
-            <span className={`absolute -bottom-1.5 left-1/2 -translate-x-1/2 h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full transition-all duration-300 shadow-[0_0_10px_rgba(34,211,238,0.8)] ${activeSection === item.id ? 'w-full' : 'w-0'}`} />
-          </a>
-        ))}
-      </motion.nav>
+      
+      {/* Navigation Layer */}
+      <Navbar activeSection={activeSection} isLoading={isLoading} />
 
       {/* Content Sections (Animate from top/bottom) */}
       <motion.div 
