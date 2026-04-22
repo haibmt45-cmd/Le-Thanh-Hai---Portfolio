@@ -88,11 +88,6 @@ const Visuals: React.FC = () => {
           ))}
         </Marquee>
       </div>
-
-      {/* Footer Integrated */}
-      <div className="mt-16 pt-8 border-t border-white/10 w-full text-center relative z-10">
-         <p className="text-white/20 text-xs uppercase tracking-[0.5em]">{t('contact.footer')}</p>
-      </div>
     </div>
   );
 };

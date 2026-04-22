@@ -54,7 +54,6 @@ const Hero: React.FC = () => {
             </span>
           </h1>
           <p className="text-xl text-white/60 mb-10 max-w-2xl leading-relaxed">
-            {t('hero.desc1')}<br className="hidden md:block" />
             {t('hero.desc2_1')}<span className="text-white font-bold">{t('hero.desc2_highlight')}</span> {t('hero.desc2_2')}<span className="whitespace-nowrap">{t('hero.desc2_highlight2')}</span>
           </p>
           

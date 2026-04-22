@@ -24,7 +24,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'technical-work', 'zunik', 'vgg', 'personal', 'contact'];
+      const sections = ['hero', 'about', 'technical-work', 'zunik', 'vgg', 'personal', 'visuals', 'contact'];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -75,8 +75,8 @@ export default function App() {
             <ZunikEvent />
             <VGGMarketing />
             <PersonalProjects />
-            <Contact />
             <Visuals />
+            <Contact />
           </motion.div>
         </AnimatePresence>
       </motion.div>
