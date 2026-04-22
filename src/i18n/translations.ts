@@ -19,7 +19,7 @@ export const translations = {
     hero: {
       tagline1: 'Tân cử nhân khoa Quan hệ công chúng - Truyền thông',
       tagline2: 'Trường Đại học Văn Lang',
-      title: 'Lê Thanh Hải',
+      title: 'LÊ THANH HẢI',
       subtitle1: 'Kiến tạo trải nghiệm.',
       subtitle2: 'Duy mỹ trong truyền thông.',
       desc1: 'Marketing Executive.',

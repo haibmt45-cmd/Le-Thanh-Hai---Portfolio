@@ -64,9 +64,17 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, isLoading }) => {
         transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
         href="#hero"
         onClick={scrollToHero}
-        className="fixed top-6 left-6 z-[60] text-white font-black tracking-[0.2em] uppercase text-sm sm:text-base drop-shadow-[0_0_15px_rgba(255,255,255,0.4)] hover:text-cyan-400 hover:drop-shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all duration-300"
+        className="fixed top-6 left-6 z-[60] font-black tracking-[0.3em] uppercase text-base sm:text-lg transition-all duration-300 group cursor-pointer"
       >
-        Lê Thanh Hải
+        <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-purple-300 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] group-hover:from-cyan-400 group-hover:to-purple-400 group-hover:drop-shadow-[0_0_25px_rgba(34,211,238,0.8)] transition-all">
+          LÊ THANH HẢI
+        </span>
+        {/* Underglow Line */}
+        <div className="absolute -bottom-1 left-0 w-full h-[1.5px] bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent blur-[1px] group-hover:via-cyan-300 transition-all duration-500" />
+        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1/2 h-4 bg-cyan-400/10 blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10" />
+        
+        {/* Subtle glow behind text */}
+        <div className="absolute inset-0 blur-xl bg-gradient-to-r from-cyan-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
       </motion.a>
 
       {/* Hamburger Menu - Top Right (Mobile Only) */}
