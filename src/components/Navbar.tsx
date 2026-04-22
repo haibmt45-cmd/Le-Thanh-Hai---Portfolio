@@ -64,9 +64,13 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, isLoading }) => {
         transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
         href="#hero"
         onClick={scrollToHero}
-        className="fixed top-6 left-6 z-[60] font-black tracking-[0.3em] uppercase text-base sm:text-lg transition-all duration-300 group cursor-pointer"
+        className="fixed top-8 left-6 z-[60] font-black tracking-[0.3em] uppercase text-base sm:text-lg transition-all duration-300 group cursor-pointer"
       >
-        <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-purple-300 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] group-hover:from-cyan-400 group-hover:to-purple-400 group-hover:drop-shadow-[0_0_25px_rgba(34,211,238,0.8)] transition-all">
+        <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-purple-300 group-hover:from-cyan-400 group-hover:to-purple-400 transition-all py-1">
+          LÊ THANH HẢI
+        </span>
+        {/* Glow layer behind text to avoid clipping/artifacts */}
+        <span className="absolute inset-x-0 top-1/2 -translate-y-1/2 text-white/40 blur-md select-none pointer-events-none group-hover:text-cyan-400/50 transition-all duration-300">
           LÊ THANH HẢI
         </span>
         {/* Underglow Line */}
