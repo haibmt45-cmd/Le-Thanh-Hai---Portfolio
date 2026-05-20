@@ -61,9 +61,6 @@ const Hero: React.FC = () => {
             <a href="#contact" className="glass-3d px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform active:scale-95 glow-blue">
                {t('hero.btn_contact')}
             </a>
-            <a href="#visuals" className="px-8 py-4 rounded-full font-bold border border-white/20 hover:bg-white/10 transition-colors">
-               {t('hero.btn_portfolio')}
-            </a>
           </div>
         </motion.div>
 

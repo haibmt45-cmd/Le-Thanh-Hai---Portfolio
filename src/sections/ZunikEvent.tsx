@@ -139,10 +139,10 @@ const ZunikEvent: React.FC = () => {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-32 bg-purple-500/10 blur-[100px] pointer-events-none" />
 
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
+          <div className="max-w-4xl mx-auto">
             
-            {/* Key Learnings Card (Larger) */}
-            <GlassCard className="md:col-span-3 p-8 md:p-12 relative overflow-hidden group border-purple-500/20" glowColor="purple">
+            {/* Key Learnings Card */}
+            <GlassCard className="p-8 md:p-12 relative overflow-hidden group border-purple-500/20" glowColor="purple">
               {/* Floating gradient line on the left */}
               <div className="absolute top-1/2 -translate-y-1/2 left-0 md:left-4 w-1.5 h-full md:h-[80%] md:rounded-full bg-gradient-to-b from-purple-400 to-cyan-400 opacity-90 shadow-[0_0_15px_rgba(168,85,247,0.5)]" />
               <Quote className="absolute -top-4 -right-4 w-40 h-40 text-white/5 transform -rotate-12 group-hover:scale-110 group-hover:text-purple-500/10 transition-all duration-700 pointer-events-none" />
@@ -159,34 +159,6 @@ const ZunikEvent: React.FC = () => {
                 <p className="text-white/80 text-[15px] md:text-[17px] leading-[1.8] md:leading-[2] text-left font-sans italic drop-shadow-md">
                   "{t('zunik.learnings_desc')}"
                 </p>
-              </div>
-            </GlassCard>
-
-            {/* Additional Projects CTA (Smaller) */}
-            <GlassCard className="md:col-span-2 p-8 md:p-10 flex flex-col justify-between relative group border-cyan-500/20 hover:border-cyan-400/30" glowColor="cyan">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/10 to-transparent pointer-events-none" />
-              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 blur-[50px] pointer-events-none group-hover:bg-cyan-500/20 transition-all duration-700" />
-              
-              <div className="relative z-10 flex justify-between items-start mb-8 md:mb-12">
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 group-hover:scale-110 group-hover:bg-cyan-500/10 group-hover:border-cyan-500/30 transition-all duration-500 shadow-[0_0_20px_rgba(255,255,255,0.02)]">
-                  <FolderKanban className="w-7 h-7 text-white/60 group-hover:text-cyan-400 transition-colors duration-300" />
-                </div>
-                <ExternalLink className="w-5 h-5 text-white/20 group-hover:text-cyan-400 transition-colors duration-300" />
-              </div>
-              
-              <div className="relative z-10 mt-auto">
-                <h4 className="text-xl md:text-2xl font-bold text-white mb-6 group-hover:text-cyan-100 transition-colors duration-300">
-                  {t('zunik.additional_text').replace(' ↗', '')}
-                </h4>
-                
-                <a 
-                  href="https://drive.google.com/drive/folders/123WdKj4xkReDNx_WXVDK9m7KsisAS-tj?usp=drive_link" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full items-center justify-center gap-2 py-4 rounded-xl bg-white/5 border border-white/10 text-white text-xs md:text-sm font-semibold uppercase tracking-widest hover:bg-cyan-500/20 hover:border-cyan-400/50 hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] transition-all duration-300 backdrop-blur-md"
-                >
-                  <span>Google Drive</span>
-                </a>
               </div>
             </GlassCard>
             

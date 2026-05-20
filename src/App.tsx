@@ -11,6 +11,7 @@ import TechnicalWork from './sections/TechnicalWork';
 import ZunikEvent from './sections/ZunikEvent';
 import VGGMarketing from './sections/VGGMarketing';
 import PersonalProjects from './sections/PersonalProjects';
+import OtherProjectsCTA from './components/OtherProjectsCTA';
 import Contact from './sections/Contact';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import { useI18n } from './context/I18nContext';
@@ -74,6 +75,7 @@ export default function App() {
             <TechnicalWork />
             <ZunikEvent />
             <VGGMarketing />
+            <OtherProjectsCTA />
             <PersonalProjects />
             <Visuals />
             <Contact />
