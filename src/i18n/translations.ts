@@ -149,7 +149,7 @@ export const translations = {
       lets_connect: 'Let\'s Connect',
       location_label: 'Location',
       location: 'VietNam — Ho Chi Minh City',
-      footer: '2026 © Created by Le Thanh Hai - Portfolio được tối ưu hóa bằng AI'
+      footer: 'Copyright 2026 © Created by Le Thanh Hai - Portfolio được tối ưu hóa bằng AI'
     }
   },
   en: {
@@ -302,7 +302,7 @@ export const translations = {
       lets_connect: 'Let\'s Connect',
       location_label: 'Location',
       location: 'VietNam — Ho Chi Minh City',
-      footer: '2026 © Created by Le Thanh Hai - Portfolio AI-optimized'
+      footer: 'Copyright 2026 © Created by Le Thanh Hai - Portfolio AI-optimized'
     }
   }
 };
