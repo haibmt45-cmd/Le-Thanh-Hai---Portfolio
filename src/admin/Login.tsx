@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useAuth } from './AuthContext';
 import { Lock, User, ArrowRight } from 'lucide-react';
 import GlassCard from '../components/GlassCard';
+import SEO from '../components/SEO';
 import { useI18n } from '../context/I18nContext';
 
 const Login: React.FC = () => {
@@ -25,6 +26,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black flex items-center justify-center p-6 relative overflow-hidden">
+      <SEO title="Login | Portfolio Admin" />
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
       

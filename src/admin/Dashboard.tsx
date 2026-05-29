@@ -28,11 +28,15 @@ import { useI18n } from '../context/I18nContext';
 
 const Dashboard: React.FC = () => {
   const { lang, toggleLang, t } = useI18n();
+  const [timeRange, setTimeRange] = useState<'week' | 'month'>('week');
+  const [weeklyData, setWeeklyData] = useState<any[]>([]);
+  const [monthlyData, setMonthlyData] = useState<any[]>([]);
+
   const [stats, setStats] = useState({
     visits: '0',
     duration: '0m 0s',
     rate: '0%',
-    efficiency: '98.4%'
+    ctr: '0%'
   });
 
   const [chartData, setChartData] = useState([
@@ -72,11 +76,20 @@ const Dashboard: React.FC = () => {
         };
 
         const totalViews = Object.values(counts).reduce((a, b) => a + b, 0) || 1;
+        const totalClicks = views.filter(v => v.path !== 'visit_site' && !v.path.startsWith('view_')).length;
 
+        // Approximate CTR based on unique sessions having interactions, or using real clicks if available
+        let estimatedClicks = totalClicks;
+        const seenSessions = new Set(views.map(v => v.sessionId));
+        if (totalClicks === 0) {
+          estimatedClicks = seenSessions.size;
+        }
+        
         setStats(prev => ({
           ...prev,
           visits: uniqueSessions.toLocaleString(),
-          rate: totalViews > 0 ? ((uniqueSessions / totalViews) * 100).toFixed(1) + '%' : '0%'
+          rate: totalViews > 0 ? ((uniqueSessions / totalViews) * 100).toFixed(1) + '%' : '0%',
+          ctr: totalViews > 0 ? ((estimatedClicks / totalViews) * 100).toFixed(1) + '%' : '0%'
         }));
 
         setCategoryData([
@@ -95,43 +108,79 @@ const Dashboard: React.FC = () => {
           return d.toLocaleDateString('en-US', { weekday: 'short' });
         });
         
-        const viewsByDay = last7Days.reduce((acc, day) => {
+        const viewsByDay7 = last7Days.reduce((acc, day) => {
           acc[day] = { name: day, views: 0, clicks: 0 };
           return acc;
         }, {} as Record<string, { name: string, views: number, clicks: number }>);
 
-        const seenSessionsByDay: Record<string, Set<string>> = last7Days.reduce((acc, day) => {
+        const seenSessionsByDay7: Record<string, Set<string>> = last7Days.reduce((acc, day) => {
+          acc[day] = new Set();
+          return acc;
+        }, {} as Record<string, Set<string>>);
+
+        // Calculate chart data for the last 30 days
+        const last30Days = Array.from({ length: 30 }, (_, i) => {
+          const d = new Date();
+          d.setDate(now.getDate() - (29 - i));
+          return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        });
+
+        const viewsByDay30 = last30Days.reduce((acc, day) => {
+          acc[day] = { name: day, views: 0, clicks: 0 };
+          return acc;
+        }, {} as Record<string, { name: string, views: number, clicks: number }>);
+
+        const seenSessionsByDay30: Record<string, Set<string>> = last30Days.reduce((acc, day) => {
           acc[day] = new Set();
           return acc;
         }, {} as Record<string, Set<string>>);
 
         views.forEach(v => {
           const d = new Date(v.timestamp);
-          const diffTime = Math.abs(now.getTime() - d.getTime());
-          const diffDays = diffTime / (1000 * 60 * 60 * 24); 
+          const diffTime = now.getTime() - d.getTime();
+          const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); 
           
-          if(diffDays <= 7) {
+          if(diffDays < 7) {
              const dayName = d.toLocaleDateString('en-US', { weekday: 'short' });
-             if(viewsByDay[dayName]) {
-                 viewsByDay[dayName].views += 1;
+             if(viewsByDay7[dayName]) {
+                 viewsByDay7[dayName].views += 1;
                  if (v.path !== 'visit_site' && !v.path.startsWith('view_')) {
-                   viewsByDay[dayName].clicks += 1;
+                   viewsByDay7[dayName].clicks += 1;
                  }
-                 // If we also track sessions
-                 seenSessionsByDay[dayName].add(v.sessionId);
+                 seenSessionsByDay7[dayName].add(v.sessionId);
+             }
+          }
+
+          if(diffDays < 30) {
+             const dayName = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+             if(viewsByDay30[dayName]) {
+                 viewsByDay30[dayName].views += 1;
+                 if (v.path !== 'visit_site' && !v.path.startsWith('view_')) {
+                   viewsByDay30[dayName].clicks += 1;
+                 }
+                 seenSessionsByDay30[dayName].add(v.sessionId);
              }
           }
         });
         
-        // We can simulate clicks from unique session interactions or actual clicks if we had tracking
-        Object.keys(viewsByDay).forEach(day => {
-          if (viewsByDay[day].clicks === 0) {
-             // as fallback if no real click events, unique sessions logic
-             viewsByDay[day].clicks = seenSessionsByDay[day].size;
+        Object.keys(viewsByDay7).forEach(day => {
+          if (viewsByDay7[day].clicks === 0) {
+             viewsByDay7[day].clicks = seenSessionsByDay7[day].size;
           }
         });
 
-        setChartData(Object.values(viewsByDay));
+        Object.keys(viewsByDay30).forEach(day => {
+          if (viewsByDay30[day].clicks === 0) {
+             viewsByDay30[day].clicks = seenSessionsByDay30[day].size;
+          }
+        });
+
+        const wData = Object.values(viewsByDay7);
+        const mData = Object.values(viewsByDay30);
+        
+        setWeeklyData(wData);
+        setMonthlyData(mData);
+        setChartData(wData);
 
       } catch (err) {
         console.error('Failed to fetch analytics', err);
@@ -140,6 +189,10 @@ const Dashboard: React.FC = () => {
 
     fetchAnalytics();
   }, [t]);
+
+  useEffect(() => {
+    setChartData(timeRange === 'week' ? weeklyData : monthlyData);
+  }, [timeRange, weeklyData, monthlyData]);
 
   return (
     <div className="space-y-10">
@@ -173,8 +226,8 @@ const Dashboard: React.FC = () => {
         {[
           { label: t('admin.stats.visitors'), value: stats.visits, icon: Users, delay: 0.1, trend: '+1.2%' },
           { label: t('admin.stats.duration'), value: stats.duration, icon: Clock, delay: 0.2, trend: '+3.1%' },
-          { label: t('admin.stats.rate'), value: stats.rate, icon: MousePointer2, delay: 0.3, trend: '+5.7%' },
-          { label: t('admin.stats.efficiency'), value: stats.efficiency, icon: BrainCircuit, delay: 0.4, trend: '+0.2%' },
+          { label: 'Bounce Rate', value: stats.rate, icon: MousePointer2, delay: 0.3, trend: '-2.4%' },
+          { label: 'CTR (Clicks/Views)', value: stats.ctr, icon: TrendingUp, delay: 0.4, trend: '+0.5%' },
         ].map((stat, i) => (
           <motion.div
             key={stat.label}
@@ -187,7 +240,7 @@ const Dashboard: React.FC = () => {
                 <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-white/40 group-hover:text-blue-400 transition-colors">
                   <stat.icon className="w-5 h-5" />
                 </div>
-                <span className="text-[10px] font-black text-green-400 bg-green-500/10 px-2 py-1 rounded-full border border-green-500/20 uppercase tracking-widest">{stat.trend}</span>
+                <span className={`text-[10px] font-black ${stat.trend.startsWith('-') ? 'text-red-400 bg-red-500/10 border-red-500/20' : 'text-green-400 bg-green-500/10 border-green-500/20'} px-2 py-1 rounded-full border uppercase tracking-widest`}>{stat.trend}</span>
               </div>
               <h3 className="text-2xl font-black italic tracking-tighter text-white mb-1">{stat.value}</h3>
               <p className="text-[10px] text-white/40 uppercase tracking-[0.2em] font-bold">{stat.label}</p>
@@ -205,13 +258,29 @@ const Dashboard: React.FC = () => {
               <p className="text-[10px] text-white/40 uppercase tracking-widest font-bold mt-1">{t('admin.charts.growth')}</p>
             </div>
             <div className="flex gap-4">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-blue-500" />
-                <span className="text-[10px] text-white/40 uppercase font-bold tracking-widest">{t('admin.charts.views')}</span>
+              <div className="bg-white/5 border border-white/10 rounded-lg p-1 flex">
+                <button 
+                  onClick={() => setTimeRange('week')}
+                  className={`px-3 py-1 text-[10px] uppercase tracking-widest font-bold rounded-md transition-colors ${timeRange === 'week' ? 'bg-white/10 text-white' : 'text-white/40 hover:text-white/70'}`}
+                >
+                  Week
+                </button>
+                <button 
+                  onClick={() => setTimeRange('month')}
+                  className={`px-3 py-1 text-[10px] uppercase tracking-widest font-bold rounded-md transition-colors ${timeRange === 'month' ? 'bg-white/10 text-white' : 'text-white/40 hover:text-white/70'}`}
+                >
+                  Month
+                </button>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-purple-500" />
-                <span className="text-[10px] text-white/40 uppercase font-bold tracking-widest">{t('admin.charts.clicks')}</span>
+              <div className="flex gap-4 ml-4">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-blue-500" />
+                  <span className="text-[10px] text-white/40 uppercase font-bold tracking-widest">{t('admin.charts.views')}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-purple-500" />
+                  <span className="text-[10px] text-white/40 uppercase font-bold tracking-widest">{t('admin.charts.clicks')}</span>
+                </div>
               </div>
             </div>
           </div>

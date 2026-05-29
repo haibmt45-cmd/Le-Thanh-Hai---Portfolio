@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import SEO from './components/SEO';
 import Snowfall from './components/Snowfall';
 import BackgroundVideo from './components/BackgroundVideo';
 import ShootingStars from './components/ShootingStars';
@@ -52,6 +53,7 @@ const PublicSite: React.FC = () => {
 
   return (
     <main className="relative min-h-screen selection:bg-blue-500 selection:text-white">
+      <SEO />
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       
       {/* Background Layer */}

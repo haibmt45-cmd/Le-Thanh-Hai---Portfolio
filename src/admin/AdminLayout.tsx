@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link, useNavigate, Outlet, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 import { 
   LayoutDashboard, 
   FileEdit, 
@@ -34,6 +35,7 @@ const AdminLayout: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#050505] text-white flex">
+      <SEO title="Admin | Portfolio" />
       {/* Sidebar */}
       <aside className="w-72 border-r border-white/10 bg-black/40 backdrop-blur-3xl flex flex-col fixed h-full z-50">
         <div className="p-8 border-b border-white/5">
