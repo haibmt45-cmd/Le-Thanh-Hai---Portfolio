@@ -6,19 +6,19 @@ import { useI18n } from '../context/I18nContext';
 const Visuals: React.FC = () => {
   const { t } = useI18n();
   const row1 = [
-    'https://drive.google.com/thumbnail?id=1rJqzbmyYkFNe-XYW9bm36UOLFWsYe6ni&sz=w1000',
-    'https://drive.google.com/thumbnail?id=1rKYhu6co_OEf_-phScRn3Sbq411Tiuef&sz=w1000',
-    'https://drive.google.com/thumbnail?id=1dupEZWFkau0V58tQX-fK9yfLG1pYA3jw&sz=w1000',
-    'https://drive.google.com/thumbnail?id=1c8aagPFIJw_mNUOta3CPVh7ExruARStS&sz=w1000',
-    'https://drive.google.com/thumbnail?id=1Svbr3ZJGgD980Ryfz3fmgmr8ayom9_Bz&sz=w1000',
+    t('visuals.img1'),
+    t('visuals.img2'),
+    t('visuals.img3'),
+    t('visuals.img4'),
+    t('visuals.img5'),
   ];
 
   const row2 = [
-    'https://drive.google.com/thumbnail?id=1ssoyEcu2VqmgX2mU7sHFXQydr7lpRVpz&sz=w1000',
-    'https://drive.google.com/thumbnail?id=16V-ICFYFke7EjlrPcVQ97AmnzdncMaAl&sz=w1000',
-    'https://drive.google.com/thumbnail?id=1sGp6gsRJ6TKIYHvdOsrgvAIphoyxupmL&sz=w1000',
-    'https://drive.google.com/thumbnail?id=19PS6iU-tPO3pqM2GaBNV3QpsJrI3NzdY&sz=w1000',
-    'https://drive.google.com/thumbnail?id=1-F4y_BwFoAtPpB-4TPr-zQNFr0X8WdZ4&sz=w1000',
+    t('visuals.img6'),
+    t('visuals.img7'),
+    t('visuals.img8'),
+    t('visuals.img9'),
+    t('visuals.img10'),
   ];
 
   return (

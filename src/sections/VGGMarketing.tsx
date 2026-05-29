@@ -10,10 +10,10 @@ const VGGMarketing: React.FC = () => {
   const tags = (t('vgg.tags') as unknown as string[]) || defaultTags;
   
   const products = [
-    { name: tags[1] || 'Professional Videography', img: 'https://drive.google.com/thumbnail?id=19Z-htGd1bV3WccKlDNT-oLEjc2XLIaD4&sz=w1000', kr: t('vgg.key_result_p1') },
-    { name: tags[3] || 'Commercial Photography', img: 'https://drive.google.com/thumbnail?id=1atYMMV1TFxHU7SPLiuZGp-p6k7xILBwa&sz=w1000', kr: t('vgg.key_result_p2') },
-    { name: tags[0] || 'AI-Powered Content', img: 'https://drive.google.com/thumbnail?id=16wl7PC_mJZIQy4crAcetUY_4QznBzXES&sz=w1000', kr: t('vgg.key_result_p3') },
-    { name: tags[2] || 'Performance Marketing', img: 'https://drive.google.com/thumbnail?id=1h9Td0w1znHzsc8GImQxhsjHLy7uwvNQX&sz=w1000', kr: t('vgg.key_result_p4') },
+    { name: tags[1] || 'Professional Videography', img: t('vgg.img1'), kr: t('vgg.key_result_p1') },
+    { name: tags[3] || 'Commercial Photography', img: t('vgg.img2'), kr: t('vgg.key_result_p2') },
+    { name: tags[0] || 'AI-Powered Content', img: t('vgg.img3'), kr: t('vgg.key_result_p3') },
+    { name: tags[2] || 'Performance Marketing', img: t('vgg.img4'), kr: t('vgg.key_result_p4') },
   ];
 
   return (

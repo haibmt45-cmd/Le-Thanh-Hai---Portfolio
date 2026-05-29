@@ -22,13 +22,13 @@ export const translations = {
       title: 'LÊ THANH HẢI',
       subtitle1: 'Kiến tạo trải nghiệm.',
       subtitle2: 'Duy mỹ trong truyền thông.',
-      desc1: 'Marketing Executive.',
       desc2_1: 'Tối ưu ',
       desc2_highlight: '30% hiệu suất',
       desc2_2: ' bằng ',
       desc2_highlight2: 'giải pháp trí tuệ nhân tạo (AI Stack).',
       btn_contact: 'Liên hệ ngay',
-      btn_portfolio: 'Xem Portfolio'
+      btn_portfolio: 'Xem Portfolio',
+      img_main: 'https://drive.google.com/thumbnail?id=1oHO4kreco9ff_UzeniNEoXUf9JImcfsm&sz=w1200'
     },
     about: {
       section_title: 'About Me',
@@ -45,7 +45,8 @@ export const translations = {
       desc_part4: ' của cá nhân em nói riêng và của doanh nghiệp nói chung. Em ưu tiên sự tỉ mỉ trong từng chi tiết và luôn mong muốn đóng góp những giải pháp thiết thực, phù hợp với mục tiêu thực tế ',
       desc_highlight3: 'mà doanh nghiệp cần',
       desc_part5: '.',
-      btn_cv: 'Xem hồ sơ năng lực'
+      btn_cv: 'Xem hồ sơ năng lực',
+      img_main: 'https://drive.google.com/thumbnail?id=1sGp6gsRJ6TKIYHvdOsrgvAIphoyxupmL&sz=w1000'
     },
     technical: {
       stack_subtitle: 'My Stack',
@@ -82,25 +83,37 @@ export const translations = {
           title: 'Zunik 10 Years Anniversary',
           desc: 'Chịu trách nhiệm Set up, quản lý kịch bản chương trình và thiết kế hệ thống Visual. Kết quả là toàn bộ nội dung hiển thị đồng bộ, đúng tiến độ, góp phần tạo nên sự chuyên nghiệp và chỉn chu cho buổi lễ kỷ niệm 10 năm của thương hiệu.',
           role: 'Event Operation & Visual Management',
-          result: 'Quản lý Rundown và Visual chính xác, không sai sót kỹ thuật. Vận hành hệ thống hiển thị đồng bộ với kịch bản chương trình. Đảm bảo tính chỉn chu và chuyên nghiệp xuyên suốt buổi lễ kỷ niệm.'
+          result: 'Quản lý Rundown và Visual chính xác, không sai sót kỹ thuật. Vận hành hệ thống hiển thị đồng bộ với kịch bản chương trình. Đảm bảo tính chỉn chu và chuyên nghiệp xuyên suốt buổi lễ kỷ niệm.',
+          img1: 'https://zunikevent.vn/wp-content/uploads/2025/10/HUY00851.jpg',
+          img2: 'https://zunikevent.vn/wp-content/uploads/2025/10/HUY01421-300x200.jpg',
+          img3: 'https://zunikevent.vn/wp-content/uploads/2025/10/DSC00526-300x200.jpg'
         },
         p2: {
           title: 'Kỷ niệm 35 năm Khoa QLCN - Trường Đại học Bách Khoa',
           desc: 'Đảm nhiệm cùng team để xây dựng Concept, thiết kế Proposal, Quotation, hỗ trợ thuyết trình phương án cũng như xây dựng Campaign truyền thông để đảm bảo mục tiêu của sự kiện. Trong quá trình site check, em đã chủ động đề xuất các phương án điều chỉnh layout hợp lý để khắc phục hạn chế mặt bằng, giúp Proposal đạt tính khả thi cao nhất khi vận hành.',
           role: 'Marketing Planning & Account Executive',
-          result: 'Proposal đạt tính khả thi 100% sau khảo sát thực địa. Tối ưu hóa diện tích sử dụng thông qua giải pháp điều chỉnh layout tại chỗ. Đảm bảo hiệu quả nhận diện thương hiệu đúng mục tiêu chiến dịch thông qua QR scan và chỉ số Engagement.'
+          result: 'Proposal đạt tính khả thi 100% sau khảo sát thực địa. Tối ưu hóa diện tích sử dụng thông qua giải pháp điều chỉnh layout tại chỗ. Đảm bảo hiệu quả nhận diện thương hiệu đúng mục tiêu chiến dịch thông qua QR scan và chỉ số Engagement.',
+          img1: 'https://drive.google.com/thumbnail?id=1dUwnbAenHp7LNrHUu9D5I-tY9X37O6xz&sz=w1000',
+          img2: 'https://drive.google.com/thumbnail?id=1Y9-nOmhcLo0f_OkfG_9NNFfLSNUPPgOP&sz=w1000',
+          img3: 'https://drive.google.com/thumbnail?id=1nyMkin0MYkhPuMNk_10Qt1fB6NMUA7SW&sz=w1000'
         },
         p3: {
           title: 'Thiên Mộc Hương Launching Aura Collection',
           desc: 'Đảm nhiệm cùng team để xây dựng Concept, thiết kế Proposal và trực tiếp thuyết trình phương án cho dự án. Đặc biệt trong giai đoạn thi công, em đã chủ động xử lý các vấn đề phát sinh tại hiện trường (hoa không giống như bản 3D, supplier làm rách thảm, ...) nhằm tối ưu hóa ngân sách và đảm bảo tính hợp lý trong vận hành thực tế.',
           role: 'Account Executive & Production Coordinator',
-          result: 'Tối ưu hóa ngân sách đầu tư thông qua việc xử lý phát sinh kỹ thuật lúc set-up. Đảm bảo vận hành hợp lý và đúng tiến độ bàn giao cho client. Duy trì tiêu chuẩn thẩm mỹ cao nhất với chi phí vận hành hợp lý nhất.'
+          result: 'Tối ưu hóa ngân sách đầu tư thông qua việc xử lý phát sinh kỹ thuật lúc set-up. Đảm bảo vận hành hợp lý và đúng tiến độ bàn giao cho client. Duy trì tiêu chuẩn thẩm mỹ cao nhất với chi phí vận hành hợp lý nhất.',
+          img1: 'https://zunikevent.vn/wp-content/uploads/2026/04/612006996_919523067300799_6676736734415795302_n-2048x779.jpg',
+          img2: 'https://drive.google.com/thumbnail?id=1iUrCpUOvh-CkNBXgtVtQiXlj_IZz5G-D&sz=w1000',
+          img3: 'https://drive.google.com/thumbnail?id=1Ji-iznHlH1xHeEmIlBdO_XfjdWosAXiy&sz=w1000'
         },
         p4: {
           title: 'Luxe Clinic - Crown In Beauty',
           desc: 'Đảm nhiệm cùng team phụ trách xây dựng Concept, lên ý tưởng chi tiết và thiết kế Proposal cho dự án. Bên cạnh việc hỗ trợ thuyết trình phương án, em trực tiếp tham gia hỗ trợ xây dựng báo giá, đảm bảo sự cân bằng giữa yêu cầu thẩm mỹ cao của thương hiệu và ngân sách thực tế.',
           role: 'Account Executive & Event Planner',
-          result: 'Phê duyệt Proposal nhanh chóng nhờ sự cân bằng giữa sáng tạo và báo giá thực tế. Đảm bảo tính khả thi tài chính cho tất cả các hạng mục triển khai.'
+          result: 'Phê duyệt Proposal nhanh chóng nhờ sự cân bằng giữa sáng tạo và báo giá thực tế. Đảm bảo tính khả thi tài chính cho tất cả các hạng mục triển khai.',
+          img1: 'https://zunikevent.vn/wp-content/uploads/2026/03/TT_9739-2048x1365.jpg',
+          img2: 'https://drive.google.com/thumbnail?id=1T4z5EWVuNBYOGEshToEravb46g8hciRi&sz=w1000',
+          img3: 'https://drive.google.com/thumbnail?id=1AM9Hm-riv4w1ivuTdtgYz2v_grMvNumB&sz=w1000'
         }
       },
       additional_text: 'Các dự án khác ↗',
@@ -117,12 +130,16 @@ export const translations = {
       tags: ['AI-Powered Content', 'Professional Videography', 'Performance Marketing', 'Commercial Photography'],
       achievement_label: 'Key Achievement',
       achievement_title: 'Tăng 25% Doanh thu qua kênh truyền thông',
-      achievement_desc: 'Con số 25% doanh thu này được em đo lường dựa trên sự tăng trưởng đơn hàng thực tế từ các chiến dịch Facebook Ads kết hợp với hệ thống nội dung Video & Hình ảnh chuyên nghiệp. Đặc biệt, sau khi phối hợp cùng team IT tối ưu lại Website và ứng dụng công cụ AI để đẩy nhanh tốc độ phủ sóng nội dung, tỷ lệ chuyển đổi khách hàng đã có bước đột phá rõ rệt so với giai đoạn trước đó.',
+      achievement_desc: 'Con số 25% doanh thu này được em đo lường dựa trên sự tăng trưởng đơn hàng thực tế từ các chiến dịch Facebook Ads kết hợp with hệ thống nội dung Video & Hình ảnh chuyên nghiệp. Đặc biệt, sau khi phối hợp cùng team IT tối ưu lại Website và ứng dụng công cụ AI để đẩy nhanh tốc độ phủ sóng nội dung, tỷ lệ chuyển đổi khách hàng đã có bước đột phá rõ rệt so với giai đoạn trước đó.',
       key_result_label: 'KEY RESULT',
       key_result_p1: 'Đảm bảo chất lượng khung hình đạt chuẩn điện ảnh thông qua việc làm chủ thiết bị và ánh sáng hiện trường. Tối ưu quy trình ghi hình thực tế, đảm bảo sự nhất quán từ giai đoạn tiền kỳ đến hậu kỳ.',
       key_result_p2: 'Tăng cường độ nhất quán về ánh sáng và màu sắc thương hiệu trên mọi nền tảng số.',
       key_result_p3: 'Sản xuất nội dung marketing nhanh chóng, đa dạng và tối ưu SEO. Duy trì sự sáng tạo và thông điệp thương hiệu cốt lõi.',
       key_result_p4: 'Đảm bảo chiến dịch tiếp cận đúng đối tượng mục tiêu với chi phí hiệu quả nhất. Tăng tỷ lệ chuyển đổi (CVR) bằng cách sử dụng A/B testing và tối ưu hóa các phương án sáng tạo dự phòng.',
+      img1: 'https://drive.google.com/thumbnail?id=19Z-htGd1bV3WccKlDNT-oLEjc2XLIaD4&sz=w1000',
+      img2: 'https://drive.google.com/thumbnail?id=1atYMMV1TFxHU7SPLiuZGp-p6k7xILBwa&sz=w1000',
+      img3: 'https://drive.google.com/thumbnail?id=16wl7PC_mJZIQy4crAcetUY_4QznBzXES&sz=w1000',
+      img4: 'https://drive.google.com/thumbnail?id=1h9Td0w1znHzsc8GImQxhsjHLy7uwvNQX&sz=w1000'
     },
     visuals: {
       section_title: '03. Creative',
@@ -130,6 +147,16 @@ export const translations = {
       main_title_amp: '&',
       main_title2: 'Aesthetics',
       desc: 'Một số ấn phẩm thiết kế và hình ảnh em thực hiện trong quá trình làm việc.',
+      img1: 'https://drive.google.com/thumbnail?id=1rJqzbmyYkFNe-XYW9bm36UOLFWsYe6ni&sz=w1000',
+      img2: 'https://drive.google.com/thumbnail?id=1rKYhu6co_OEf_-phScRn3Sbq411Tiuef&sz=w1000',
+      img3: 'https://drive.google.com/thumbnail?id=1dupEZWFkau0V58tQX-fK9yfLG1pYA3jw&sz=w1000',
+      img4: 'https://drive.google.com/thumbnail?id=1c8aagPFIJw_mNUOta3CPVh7ExruARStS&sz=w1000',
+      img5: 'https://drive.google.com/thumbnail?id=1Svbr3ZJGgD980Ryfz3fmgmr8ayom9_Bz&sz=w1000',
+      img6: 'https://drive.google.com/thumbnail?id=1ssoyEcu2VqmgX2mU7sHFXQydr7lpRVpz&sz=w1000',
+      img7: 'https://drive.google.com/thumbnail?id=16V-ICFYFke7EjlrPcVQ97AmnzdncMaAl&sz=w1000',
+      img8: 'https://drive.google.com/thumbnail?id=1sGp6gsRJ6TKIYHvdOsrgvAIphoyxupmL&sz=w1000',
+      img9: 'https://drive.google.com/thumbnail?id=19PS6iU-tPO3pqM2GaBNV3QpsJrI3NzdY&sz=w1000',
+      img10: 'https://drive.google.com/thumbnail?id=1-F4y_BwFoAtPpB-4TPr-zQNFr0X8WdZ4&sz=w1000',
     },
     personal: {
       section_title: '03. Personal',
@@ -137,7 +164,13 @@ export const translations = {
       main_title2: 'Projects',
       subtitle: 'Photography & Video & Bassist',
       desc: 'Em không chỉ làm sự kiện, em sống cùng nghệ thuật. Nhiếp ảnh cho em sự tỉ mỉ, quay phim dạy em cách kể chuyện, còn những đêm chơi Bass trong ban nhạc mang lại cho em tư duy về nhịp điệu, cảm âm.',
-      tags: ['Photography & Retouch', 'Cinematic Video', 'Bassist (Musicality)']
+      tags: ['Photography & Retouch', 'Cinematic Video', 'Bassist (Musicality)'],
+      img1: 'https://drive.google.com/thumbnail?id=1eNsJvGmiLgXHTjKqH7fksDTOeI7uNodO&sz=w1000',
+      img2: 'https://drive.google.com/thumbnail?id=1w0dPAl8fHRcFgu5A5AieyoGjpafvHsX9&sz=w1000',
+      img3: 'https://drive.google.com/thumbnail?id=1eAnwCmlNUyvu-m4xQYYZe5_ur0RDN1LF&sz=w1000',
+      img4: 'https://drive.google.com/thumbnail?id=1dupEZWFkau0V58tQX-fK9yfLG1pYA3jw&sz=w1000',
+      img5: 'https://drive.google.com/thumbnail?id=1rmjR1dY4_kAQ5SxDdYpxW-bSBB2Mnexq&sz=w1000',
+      img6: 'https://drive.google.com/thumbnail?id=1m72VspU1fxT7uvVxlEOymCjQ3ClNhnJi&sz=w1000',
     },
     contact: {
       section_title: '05. Connect',
@@ -150,6 +183,51 @@ export const translations = {
       location_label: 'Location',
       location: 'VietNam — Ho Chi Minh City',
       footer: 'Copyright 2026 © Created by Le Thanh Hai - Portfolio được tối ưu hóa bằng AI'
+    },
+    admin: {
+      login_title: 'Truy cập Admin',
+      login_subtitle: 'Đăng nhập an toàn',
+      username: 'Tên đăng nhập',
+      password: 'Mật khẩu',
+      sign_in: 'Đăng nhập',
+      invalid: 'Thông tin không chính xác',
+      nav: {
+        dashboard: 'Bảng điều khiển',
+        content: 'Quản lý nội dung',
+        analytics: 'Phân tích dữ liệu',
+        settings: 'Cấu hình',
+        logout: 'Đăng xuất'
+      },
+      stats: {
+        visitors: 'Tổng lượt truy cập',
+        duration: 'Thời gian TB',
+        rate: 'Tỷ lệ tương tác',
+        efficiency: 'Hiệu suất AI',
+        status: 'Trạng thái hệ thống',
+        optimal: 'Tối ưu'
+      },
+      charts: {
+        traffic: 'Tốc độ truy cập',
+        growth: 'Chỉ số tăng trưởng',
+        reach: 'Phân khúc tiếp cận',
+        niche: 'Hiệu quả ngách',
+        views: 'Lượt xem',
+        clicks: 'Lượt nhấp'
+      },
+      editor: {
+        title: 'Quản lý nội dung',
+        subtitle: 'Trình chỉnh sửa giao diện',
+        reset: 'Đặt lại',
+        publish: 'Xuất bản',
+        saving: 'Đang lưu...',
+        saved: 'Đã lưu',
+        editing_mode: 'Chế độ chỉnh sửa',
+        writing: 'Chỉnh sửa'
+      },
+      insights: {
+        title: 'Chiến lược AI',
+        subtitle: 'Khuyến nghị tự động'
+      }
     }
   },
   en: {
@@ -175,13 +253,13 @@ export const translations = {
       title: 'Le Thanh Hai',
       subtitle1: 'Experience Architect.',
       subtitle2: 'Aesthetics in Strategy.',
-      desc1: 'Marketing Executive.',
       desc2_1: 'Optimized ',
       desc2_highlight: '30% performance',
       desc2_2: ' using ',
       desc2_highlight2: 'AI workflow solutions.',
       btn_contact: 'Contact Me',
-      btn_portfolio: 'View Portfolio'
+      btn_portfolio: 'View Portfolio',
+      img_main: 'https://drive.google.com/thumbnail?id=1oHO4kreco9ff_UzeniNEoXUf9JImcfsm&sz=w1200'
     },
     about: {
       section_title: 'About Me',
@@ -198,7 +276,8 @@ export const translations = {
       desc_part4: ' and elevate content production quality. With a growth mindset and a constant eagerness to learn, I treat every project as an opportunity to refine workflows towards ',
       desc_highlight3: 'sustainable growth',
       desc_part5: '. I prioritize meticulous attention to detail and always strive to deliver practical solutions aligned with the actual business objectives.',
-      btn_cv: 'View My Resume'
+      btn_cv: 'View My Resume',
+      img_main: 'https://drive.google.com/thumbnail?id=1sGp6gsRJ6TKIYHvdOsrgvAIphoyxupmL&sz=w1000'
     },
     technical: {
       stack_subtitle: 'My Stack',
@@ -235,25 +314,37 @@ export const translations = {
           title: 'Zunik 10 Years Anniversary',
           desc: 'Took full responsibility for the event setup, program script management, and visual system design. As a result, all visual contents were displayed synchronously and on schedule, strictly ensuring a deeply professional and meticulous atmosphere for the brand\'s 10-year milestone.',
           role: 'Event Operation & Visual Management',
-          result: 'Flawlessly managed the rundown and visual systems with zero technical errors. Synchronized the display operations perfectly with the program script. Ensured meticulous detailing and high professionalism throughout the anniversary ceremony.'
+          result: 'Flawlessly managed the rundown and visual systems with zero technical errors. Synchronized the display operations perfectly with the program script. Ensured meticulous detailing and high professionalism throughout the anniversary ceremony.',
+          img1: 'https://zunikevent.vn/wp-content/uploads/2025/10/HUY00851.jpg',
+          img2: 'https://zunikevent.vn/wp-content/uploads/2025/10/HUY01421-300x200.jpg',
+          img3: 'https://zunikevent.vn/wp-content/uploads/2025/10/DSC00526-300x200.jpg'
         },
         p2: {
           title: '35th Anniversary - Faculty of Industrial Management (HCMUT)',
           desc: 'Collaborated with the team to conceptualize, design the Proposal, manage Quotations, support the idea pitching process, and develop communication Campaigns to ensure the event\'s objectives were fully met. During site checks, I proactively proposed layout adjustments to overcome specific venue limitations, guaranteeing the highest feasibility for the ultimate proposal upon execution.',
           role: 'Marketing Planning & Account Executive',
-          result: 'Achieved 100% proposal feasibility following practical site surveys. Optimized spatial area via on-site layout adjustment solutions. Ensured brand recognition effectiveness aligning with campaign goals through QR scans and Engagement tracking.'
+          result: 'Achieved 100% proposal feasibility following practical site surveys. Optimized spatial area via on-site layout adjustment solutions. Ensured brand recognition effectiveness aligning with campaign goals through QR scans and Engagement tracking.',
+          img1: 'https://drive.google.com/thumbnail?id=1dUwnbAenHp7LNrHUu9D5I-tY9X37O6xz&sz=w1000',
+          img2: 'https://drive.google.com/thumbnail?id=1Y9-nOmhcLo0f_OkfG_9NNFfLSNUPPgOP&sz=w1000',
+          img3: 'https://drive.google.com/thumbnail?id=1nyMkin0MYkhPuMNk_10Qt1fB6NMUA7SW&sz=w1000'
         },
         p3: {
           title: 'Thien Moc Huong Launching Aura Collection',
           desc: 'Worked alongside the team to brainstorm the Concept, structure the Proposal, and directly present the strategy for the project. Specifically, during the execution phase, I took the initiative to resolve on-site arising issues (e.g., flowers deviating from 3D drafts, suppliers tearing carpets) to effectively optimize the budget and maintain flawless practical operation.',
           role: 'Account Executive & Production Coordinator',
-          result: 'Optimized investment budgets by actively resolving technical issues during setup. Ensured logical operation and timely handover to the client. Maintained the highest aesthetic standards paired with the most reasonable operational costs.'
+          result: 'Optimized investment budgets by actively resolving technical issues during setup. Ensured logical operation and timely handover to the client. Maintained the highest aesthetic standards paired with the most reasonable operational costs.',
+          img1: 'https://zunikevent.vn/wp-content/uploads/2026/04/612006996_919523067300799_6676736734415795302_n-2048x779.jpg',
+          img2: 'https://drive.google.com/thumbnail?id=1iUrCpUOvh-CkNBXgtVtQiXlj_IZz5G-D&sz=w1000',
+          img3: 'https://drive.google.com/thumbnail?id=1Ji-iznHlH1xHeEmIlBdO_XfjdWosAXiy&sz=w1000'
         },
         p4: {
           title: 'Luxe Clinic - Crown In Beauty',
           desc: 'Joined the team in charge of conceptual development, detailed ideation, and Proposal design for the project. In addition to supporting the pitching process, I directly participated in structuring the quotation, ensuring a perfect balance between the brand\'s high aesthetic standards and the actual budget framework.',
           role: 'Account Executive & Event Planner',
-          result: 'Accelerated proposal approval by perfectly balancing creative concepts with practical quotations. Ensured financial feasibility across all execution categories.'
+          result: 'Accelerated proposal approval by perfectly balancing creative concepts with practical quotations. Ensured financial feasibility across all execution categories.',
+          img1: 'https://zunikevent.vn/wp-content/uploads/2026/03/TT_9739-2048x1365.jpg',
+          img2: 'https://drive.google.com/thumbnail?id=1T4z5EWVuNBYOGEshToEravb46g8hciRi&sz=w1000',
+          img3: 'https://drive.google.com/thumbnail?id=1AM9Hm-riv4w1ivuTdtgYz2v_grMvNumB&sz=w1000'
         }
       },
       additional_text: 'Other Projects ↗',
@@ -276,6 +367,10 @@ export const translations = {
       key_result_p2: 'Enhancing lighting and brand color consistency across all digital platforms.',
       key_result_p3: 'Producing marketing content rapidly, diversely, and SEO-optimized. Maintaining creativity and core brand messaging.',
       key_result_p4: 'Ensuring campaigns reach the right target audience with the most effective costs. Increasing conversion rate (CVR) by using A/B testing and optimizing creative backup options.',
+      img1: 'https://drive.google.com/thumbnail?id=19Z-htGd1bV3WccKlDNT-oLEjc2XLIaD4&sz=w1000',
+      img2: 'https://drive.google.com/thumbnail?id=1atYMMV1TFxHU7SPLiuZGp-p6k7xILBwa&sz=w1000',
+      img3: 'https://drive.google.com/thumbnail?id=16wl7PC_mJZIQy4crAcetUY_4QznBzXES&sz=w1000',
+      img4: 'https://drive.google.com/thumbnail?id=1h9Td0w1znHzsc8GImQxhsjHLy7uwvNQX&sz=w1000'
     },
     visuals: {
       section_title: '03. Creative',
@@ -283,6 +378,16 @@ export const translations = {
       main_title_amp: '&',
       main_title2: 'Aesthetics',
       desc: 'Selected professional aesthetics and design publications I created during my career.',
+      img1: 'https://drive.google.com/thumbnail?id=1rJqzbmyYkFNe-XYW9bm36UOLFWsYe6ni&sz=w1000',
+      img2: 'https://drive.google.com/thumbnail?id=1rKYhu6co_OEf_-phScRn3Sbq411Tiuef&sz=w1000',
+      img3: 'https://drive.google.com/thumbnail?id=1dupEZWFkau0V58tQX-fK9yfLG1pYA3jw&sz=w1000',
+      img4: 'https://drive.google.com/thumbnail?id=1c8aagPFIJw_mNUOta3CPVh7ExruARStS&sz=w1000',
+      img5: 'https://drive.google.com/thumbnail?id=1Svbr3ZJGgD980Ryfz3fmgmr8ayom9_Bz&sz=w1000',
+      img6: 'https://drive.google.com/thumbnail?id=1ssoyEcu2VqmgX2mU7sHFXQydr7lpRVpz&sz=w1000',
+      img7: 'https://drive.google.com/thumbnail?id=16V-ICFYFke7EjlrPcVQ97AmnzdncMaAl&sz=w1000',
+      img8: 'https://drive.google.com/thumbnail?id=1sGp6gsRJ6TKIYHvdOsrgvAIphoyxupmL&sz=w1000',
+      img9: 'https://drive.google.com/thumbnail?id=19PS6iU-tPO3pqM2GaBNV3QpsJrI3NzdY&sz=w1000',
+      img10: 'https://drive.google.com/thumbnail?id=1-F4y_BwFoAtPpB-4TPr-zQNFr0X8WdZ4&sz=w1000',
     },
     personal: {
       section_title: '03. Personal',
@@ -290,7 +395,13 @@ export const translations = {
       main_title2: 'Projects',
       subtitle: 'Photography & Video & Bassist',
       desc: 'I don\'t just organize events, I live alongside art. Photography grants me meticulousness, videography teaches me how to tell a story, and the nights playing Bass in a band grant me a distinct mindset regarding rhythm and musicality.',
-      tags: ['Photography & Retouch', 'Cinematic Video', 'Bassist (Musicality)']
+      tags: ['Photography & Retouch', 'Cinematic Video', 'Bassist (Musicality)'],
+      img1: 'https://drive.google.com/thumbnail?id=1eNsJvGmiLgXHTjKqH7fksDTOeI7uNodO&sz=w1000',
+      img2: 'https://drive.google.com/thumbnail?id=1w0dPAl8fHRcFgu5A5AieyoGjpafvHsX9&sz=w1000',
+      img3: 'https://drive.google.com/thumbnail?id=1eAnwCmlNUyvu-m4xQYYZe5_ur0RDN1LF&sz=w1000',
+      img4: 'https://drive.google.com/thumbnail?id=1dupEZWFkau0V58tQX-fK9yfLG1pYA3jw&sz=w1000',
+      img5: 'https://drive.google.com/thumbnail?id=1rmjR1dY4_kAQ5SxDdYpxW-bSBB2Mnexq&sz=w1000',
+      img6: 'https://drive.google.com/thumbnail?id=1m72VspU1fxT7uvVxlEOymCjQ3ClNhnJi&sz=w1000',
     },
     contact: {
       section_title: '05. Connect',
@@ -303,6 +414,51 @@ export const translations = {
       location_label: 'Location',
       location: 'VietNam — Ho Chi Minh City',
       footer: 'Copyright 2026 © Created by Le Thanh Hai - Portfolio AI-optimized'
+    },
+    admin: {
+      login_title: 'Admin Access',
+      login_subtitle: 'Secure Login',
+      username: 'Username',
+      password: 'Password',
+      sign_in: 'Sign In',
+      invalid: 'Invalid credentials',
+      nav: {
+        dashboard: 'Dashboard',
+        content: 'Content Manager',
+        analytics: 'Data Analyst',
+        settings: 'Settings',
+        logout: 'Logout'
+      },
+      stats: {
+        visitors: 'Total Visitors',
+        duration: 'Avg. Duration',
+        rate: 'Interaction Rate',
+        efficiency: 'AI Efficiency',
+        status: 'Node Status',
+        optimal: 'Optimal'
+      },
+      charts: {
+        traffic: 'Traffic Velocity',
+        growth: 'Growth Metrics',
+        reach: 'Segment Reach',
+        niche: 'Niche Performance',
+        views: 'Views',
+        clicks: 'Clicks'
+      },
+      editor: {
+        title: 'Content Manager',
+        subtitle: 'Surface Modification Engine',
+        reset: 'Reset',
+        publish: 'Publish',
+        saving: 'Saving...',
+        saved: 'Saved',
+        editing_mode: 'Editing Language',
+        writing: 'Modify'
+      },
+      insights: {
+        title: 'AI Strategy Engine',
+        subtitle: 'Autonomous Recommendations'
+      }
     }
   }
 };

@@ -1,91 +1,50 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import Snowfall from './components/Snowfall';
-import BackgroundVideo from './components/BackgroundVideo';
-import ShootingStars from './components/ShootingStars';
-import LoadingScreen from './components/LoadingScreen';
-import Hero from './sections/Hero';
-import Visuals from './sections/Visuals';
-import AboutMe from './sections/AboutMe';
-import TechnicalWork from './sections/TechnicalWork';
-import ZunikEvent from './sections/ZunikEvent';
-import VGGMarketing from './sections/VGGMarketing';
-import PersonalProjects from './sections/PersonalProjects';
-import OtherProjectsCTA from './components/OtherProjectsCTA';
-import Contact from './sections/Contact';
-import LanguageSwitcher from './components/LanguageSwitcher';
-import { useI18n } from './context/I18nContext';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import PublicSite from './PublicSite';
+import Login from './admin/Login';
+import AdminLayout from './admin/AdminLayout';
+import Dashboard from './admin/Dashboard';
+import ContentEditor from './admin/ContentEditor';
+import { AuthProvider, useAuth } from './admin/AuthContext';
 
-import Navbar from './components/Navbar';
+const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { isAuthenticated } = useAuth();
+  if (!isAuthenticated) {
+    return <Navigate to="/admin/login" replace />;
+  }
+  return <>{children}</>;
+};
 
 export default function App() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [activeSection, setActiveSection] = useState('hero');
-  const { t, lang } = useI18n();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['hero', 'about', 'technical-work', 'zunik', 'vgg', 'personal', 'visuals', 'contact'];
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 150 && rect.bottom >= 150) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <main className="relative min-h-screen selection:bg-blue-500 selection:text-white">
-      {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
-      
-      {/* Background Layer */}
-      <BackgroundVideo />
-      <Snowfall />
-      <ShootingStars />
-      
-      {!isLoading && <LanguageSwitcher />}
-      
-      {/* Navigation Layer */}
-      <Navbar activeSection={activeSection} isLoading={isLoading} />
+    <Router>
+      <AuthProvider>
+        <Routes>
+          {/* Public Website */}
+          <Route path="/" element={<PublicSite />} />
 
-      {/* Content Sections (Animate from top/bottom) */}
-      <motion.div 
-        initial={{ y: 50, opacity: 0 }}
-        animate={!isLoading ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
-        transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-        className="relative z-10"
-      >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={lang}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+          {/* Admin Authentication */}
+          <Route path="/admin/login" element={<Login />} />
+
+          {/* Admin Dashboard (Protected) */}
+          <Route 
+            path="/admin" 
+            element={
+              <ProtectedRoute>
+                <AdminLayout />
+              </ProtectedRoute>
+            }
           >
-            <Hero />
-            <AboutMe />
-            <TechnicalWork />
-            <ZunikEvent />
-            <VGGMarketing />
-            <OtherProjectsCTA />
-            <PersonalProjects />
-            <Visuals />
-            <Contact />
-          </motion.div>
-        </AnimatePresence>
-      </motion.div>
+            <Route index element={<Dashboard />} />
+            <Route path="content" element={<ContentEditor />} />
+            <Route path="analytics" element={<Dashboard />} />
+            <Route path="settings" element={<div className="p-10 text-white/40 uppercase tracking-widest font-bold">Settings Module Incoming...</div>} />
+          </Route>
 
-      {/* Global Ambient Glows */}
-      <div className="fixed top-[20%] left-[-10%] w-[40%] h-[40%] bg-blue-600/5 blur-[150px] pointer-events-none rounded-full" />
-      <div className="fixed bottom-[10%] right-[-10%] w-[30%] h-[50%] bg-purple-600/5 blur-[150px] pointer-events-none rounded-full" />
-    </main>
+          {/* Fallback */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </AuthProvider>
+    </Router>
   );
 }

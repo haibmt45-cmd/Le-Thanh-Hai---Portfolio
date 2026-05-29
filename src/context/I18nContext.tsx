@@ -7,19 +7,51 @@ interface I18nContextType {
   lang: Language;
   toggleLang: () => void;
   t: (path: string) => any;
+  updateTranslation: (newContent: any) => void;
+  translations: any;
 }
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
 export const I18nProvider = ({ children }: { children: ReactNode }) => {
-  const [lang, setLang] = useState<Language>('vi');
+  const [lang, setLang] = useState<Language>(() => {
+    return (localStorage.getItem('preferred_lang') as Language) || 'vi';
+  });
+
+  const [customTranslations, setCustomTranslations] = useState(() => {
+    const saved = localStorage.getItem('site_content');
+    return saved ? JSON.parse(saved) : {};
+  });
 
   const toggleLang = () => {
-    setLang((prev) => (prev === 'vi' ? 'en' : 'vi'));
+    setLang((prev) => {
+      const newLang = prev === 'vi' ? 'en' : 'vi';
+      localStorage.setItem('preferred_lang', newLang);
+      return newLang;
+    });
+  };
+
+  const updateTranslation = (newContent: any) => {
+    setCustomTranslations(newContent);
+    localStorage.setItem('site_content', JSON.stringify(newContent));
   };
 
   const t = (path: string) => {
     const keys = path.split('.');
+    
+    // Check custom translations first
+    let customResult: any = customTranslations[lang];
+    let foundCustom = true;
+    for (const key of keys) {
+      if (customResult?.[key] === undefined) {
+        foundCustom = false;
+        break;
+      }
+      customResult = customResult[key];
+    }
+    if (foundCustom) return customResult;
+
+    // Fallback to static translations
     let result: any = translations[lang];
     for (const key of keys) {
       if (result?.[key] === undefined) {
@@ -36,7 +68,7 @@ export const I18nProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <I18nContext.Provider value={{ lang, toggleLang, t }}>
+    <I18nContext.Provider value={{ lang, toggleLang, t, updateTranslation, translations: { ...translations, ...customTranslations } }}>
       {children}
     </I18nContext.Provider>
   );

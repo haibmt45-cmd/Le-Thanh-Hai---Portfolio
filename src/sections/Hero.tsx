@@ -80,7 +80,7 @@ const Hero: React.FC = () => {
                 initial={{ scale: 1.1, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
-                src="https://drive.google.com/thumbnail?id=1oHO4kreco9ff_UzeniNEoXUf9JImcfsm&sz=w1200"
+                src={t('hero.img_main')}
                 alt="Lê Thanh Hải Portrait"
                 className="w-full h-auto object-cover relative z-0"
                 referrerPolicy="no-referrer"

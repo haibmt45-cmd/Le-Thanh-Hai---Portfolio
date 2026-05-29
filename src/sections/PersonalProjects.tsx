@@ -12,12 +12,12 @@ const PersonalProjects: React.FC = () => {
   const tags = (t('personal.tags') as unknown as string[]) || defaultTags;
 
   const images = [
-    { src: 'https://drive.google.com/thumbnail?id=1eNsJvGmiLgXHTjKqH7fksDTOeI7uNodO&sz=w1000', alt: 'Personal Project 1' },
-    { src: 'https://drive.google.com/thumbnail?id=1w0dPAl8fHRcFgu5A5AieyoGjpafvHsX9&sz=w1000', alt: 'Personal Project 2' },
-    { src: 'https://drive.google.com/thumbnail?id=1eAnwCmlNUyvu-m4xQYYZe5_ur0RDN1LF&sz=w1000', alt: 'Personal Project 3' },
-    { src: 'https://drive.google.com/thumbnail?id=1dupEZWFkau0V58tQX-fK9yfLG1pYA3jw&sz=w1000', alt: 'Personal Project 4' },
-    { src: 'https://drive.google.com/thumbnail?id=1rmjR1dY4_kAQ5SxDdYpxW-bSBB2Mnexq&sz=w1000', alt: 'Personal Project 5' },
-    { src: 'https://drive.google.com/thumbnail?id=1m72VspU1fxT7uvVxlEOymCjQ3ClNhnJi&sz=w1000', alt: 'Personal Project 6' },
+    { src: t('personal.img1'), alt: 'Personal Project 1' },
+    { src: t('personal.img2'), alt: 'Personal Project 2' },
+    { src: t('personal.img3'), alt: 'Personal Project 3' },
+    { src: t('personal.img4'), alt: 'Personal Project 4' },
+    { src: t('personal.img5'), alt: 'Personal Project 5' },
+    { src: t('personal.img6'), alt: 'Personal Project 6' },
   ];
 
   return (

@@ -1,0 +1,23 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+  
+    // Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isValidPageView(data) {
+      return data.keys().hasAll(['path', 'sessionId', 'timestamp']) &&
+             data.path is string && data.path.size() <= 200 &&
+             data.sessionId is string && data.sessionId.size() <= 100 &&
+             data.timestamp is number;
+    }
+
+    match /page_views/{viewId} {
+      allow create: if isValidPageView(request.resource.data);
+      allow update: if isValidPageView(request.resource.data);
+      allow read: if true; // The dashboard needs to read this without auth. In a real production app, enforce auth.
+    }
+  }
+}

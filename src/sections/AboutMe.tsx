@@ -19,7 +19,7 @@ const AboutMe: React.FC = () => {
           >
             <GlassCard className="!p-0 overflow-hidden border border-white/10" glowColor="purple">
               <img 
-                src="https://drive.google.com/thumbnail?id=1sGp6gsRJ6TKIYHvdOsrgvAIphoyxupmL&sz=w1000" 
+                src={t('about.img_main')} 
                 alt="About Me" 
                 className="w-full aspect-[4/5] object-cover" 
                 referrerPolicy="no-referrer"

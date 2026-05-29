@@ -1,0 +1,23 @@
+{
+  "entities": {
+    "PageView": {
+      "title": "PageView",
+      "description": "Records a single page view event.",
+      "type": "object",
+      "properties": {
+        "path": { "type": "string" },
+        "sessionId": { "type": "string" },
+        "userAgent": { "type": "string" },
+        "timestamp": { "type": "number" },
+        "duration": { "type": "number", "description": "Time spent on the page in seconds (optional)" }
+      },
+      "required": ["path", "sessionId", "userAgent", "timestamp"]
+    }
+  },
+  "firestore": {
+    "page_views/{viewId}": {
+      "schema": { "$ref": "#/entities/PageView" },
+      "description": "Stores all page views."
+    }
+  }
+}
