@@ -57,10 +57,10 @@ const Dashboard: React.FC = () => {
     const fetchAnalytics = async () => {
       try {
         const querySnapshot = await getDocs(collection(db, 'page_views'));
-        const views = querySnapshot.docs.map(doc => doc.data() as { path: string, sessionId: string, timestamp: number });
+        const views = querySnapshot.docs.map(doc => doc.data() as { path: string, sessionId: string, timestamp: number, ip?: string, deviceId?: string });
         
-        // Compute unique visitors based on sessionId
-        const uniqueSessions = new Set(views.map(v => v.sessionId)).size;
+        // Compute unique visitors based on IP, falling back to persistent deviceId or sessionId
+        const uniqueSessions = new Set(views.map(v => v.ip || v.deviceId || v.sessionId)).size;
         
         // Count typical paths
         const counts = {
