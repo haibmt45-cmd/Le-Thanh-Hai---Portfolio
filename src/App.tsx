@@ -6,6 +6,7 @@ import Login from './admin/Login';
 import AdminLayout from './admin/AdminLayout';
 import Dashboard from './admin/Dashboard';
 import ContentEditor from './admin/ContentEditor';
+import Settings from './admin/Settings';
 import { AuthProvider, useAuth } from './admin/AuthContext';
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -40,7 +41,7 @@ export default function App() {
               <Route index element={<Dashboard />} />
               <Route path="content" element={<ContentEditor />} />
               <Route path="analytics" element={<Dashboard />} />
-              <Route path="settings" element={<div className="p-10 text-white/40 uppercase tracking-widest font-bold">Settings Module Incoming...</div>} />
+              <Route path="settings" element={<Settings />} />
             </Route>
 
             {/* Fallback */}
