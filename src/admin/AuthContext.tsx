@@ -72,7 +72,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   }, [isAuthenticated]);
 
   const login = (user: string, pass: string) => {
-    if (user === 'admin' && pass === '211002') {
+    if (user.toLowerCase() === 'admin' && pass === '211002') {
       setIsAuthenticated(true);
       sessionStorage.setItem('admin_authenticated', 'true');
       sessionStorage.setItem('admin_last_active', Date.now().toString());
