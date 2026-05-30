@@ -12,7 +12,8 @@ import {
   Globe,
   Languages,
   Menu,
-  X
+  X,
+  Image as ImageIcon
 } from 'lucide-react';
 import { useAuth } from './AuthContext';
 import { useI18n } from '../context/I18nContext';
@@ -32,6 +33,7 @@ const AdminLayout: React.FC = () => {
   const menuItems = [
     { id: 'dashboard', label: t('admin.nav.dashboard'), path: '/admin', icon: LayoutDashboard },
     { id: 'content', label: t('admin.nav.content'), path: '/admin/content', icon: FileEdit },
+    { id: 'media', label: 'Media Library', path: '/admin/media', icon: ImageIcon },
     { id: 'analytics', label: t('admin.nav.analytics'), path: '/admin/analytics', icon: BarChart3 },
     { id: 'settings', label: t('admin.nav.settings'), path: '/admin/settings', icon: Settings },
   ];
