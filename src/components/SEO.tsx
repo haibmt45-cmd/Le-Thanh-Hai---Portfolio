@@ -23,6 +23,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="keywords" content={keywords} />
       
       {/* Open Graph / Facebook */}
+      <meta property="og:site_name" content="Lê Thanh Hải" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
