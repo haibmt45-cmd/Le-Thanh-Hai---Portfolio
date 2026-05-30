@@ -31,7 +31,7 @@ const Dashboard: React.FC = () => {
   const [recentActivities, setRecentActivities] = useState<any[]>([]);
 
   const quickLinks = [
-    { title: 'Chỉnh sửa Nội dung', desc: 'Quản lý text, i18n & translations', icon: Globe, path: '/admin/content', color: 'blue' },
+    { title: 'Nội dung & Media', desc: 'Quản lý text, hình ảnh & media', icon: Globe, path: '/admin/content', color: 'blue' },
     { title: 'Phân tích Dữ liệu', desc: 'Xem traffic & báo cáo chuyển đổi', icon: Activity, path: '/admin/analytics', color: 'purple' },
     { title: 'Cài đặt Hệ thống', desc: 'Tên miền & SEO Metadata', icon: MonitorPlay, path: '/admin/settings', color: 'orange' },
   ];

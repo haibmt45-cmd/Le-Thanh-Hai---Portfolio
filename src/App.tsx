@@ -7,7 +7,6 @@ import AdminLayout from './admin/AdminLayout';
 import Dashboard from './admin/Dashboard';
 import ContentEditor from './admin/ContentEditor';
 import Settings from './admin/Settings';
-import MediaManager from './admin/MediaManager';
 import Analytics from './admin/Analytics';
 import { AuthProvider, useAuth } from './admin/AuthContext';
 
@@ -42,7 +41,6 @@ export default function App() {
             >
               <Route index element={<Dashboard />} />
               <Route path="content" element={<ContentEditor />} />
-              <Route path="media" element={<MediaManager />} />
               <Route path="analytics" element={<Analytics />} />
               <Route path="settings" element={<Settings />} />
             </Route>

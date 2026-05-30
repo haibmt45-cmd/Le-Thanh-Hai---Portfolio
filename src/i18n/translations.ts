@@ -192,6 +192,7 @@ export const translations = {
       nav: {
         dashboard: 'Bảng điều khiển',
         content: 'Quản lý nội dung',
+        content_media: 'Nội dung & Media',
         analytics: 'Phân tích dữ liệu',
         settings: 'Cấu hình',
         logout: 'Đăng xuất'
@@ -421,6 +422,7 @@ export const translations = {
       nav: {
         dashboard: 'Dashboard',
         content: 'Content Manager',
+        content_media: 'Content & Media',
         analytics: 'Data Analyst',
         settings: 'Settings',
         logout: 'Logout'

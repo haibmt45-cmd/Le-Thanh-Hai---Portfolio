@@ -32,8 +32,7 @@ const AdminLayout: React.FC = () => {
 
   const menuItems = [
     { id: 'dashboard', label: t('admin.nav.dashboard'), path: '/admin', icon: LayoutDashboard },
-    { id: 'content', label: t('admin.nav.content'), path: '/admin/content', icon: FileEdit },
-    { id: 'media', label: 'Media Library', path: '/admin/media', icon: ImageIcon },
+    { id: 'content', label: t('admin.nav.content_media'), path: '/admin/content', icon: FileEdit },
     { id: 'analytics', label: t('admin.nav.analytics'), path: '/admin/analytics', icon: BarChart3 },
     { id: 'settings', label: t('admin.nav.settings'), path: '/admin/settings', icon: Settings },
   ];

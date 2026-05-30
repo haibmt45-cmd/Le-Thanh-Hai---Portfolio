@@ -44,8 +44,10 @@ const ContentEditor: React.FC = () => {
   };
 
   const tabs = [
+    { id: 'nav', label: 'Navigation Menu' },
     { id: 'hero', label: t('nav.about_group') + ': Hero' },
     { id: 'about', label: t('nav.who_am_i') },
+    { id: 'technical', label: t('nav.skills') },
     { id: 'vgg', label: t('nav.marketing') },
     { id: 'zunik', label: t('nav.event') },
     { id: 'personal', label: t('nav.personal') },
