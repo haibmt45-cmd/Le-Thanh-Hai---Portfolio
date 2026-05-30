@@ -37,7 +37,7 @@ const Settings: React.FC = () => {
           <div className="space-y-8">
             <div>
               <label className="block text-[10px] font-black text-white/40 uppercase tracking-widest mb-3">Primary Domain</label>
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <input
                   type="text"
                   value={domain}
@@ -51,7 +51,7 @@ const Settings: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-black/40 rounded-2xl p-6 border border-white/5">
+            <div className="bg-black/40 rounded-2xl p-4 sm:p-6 border border-white/5">
               <h3 className="text-sm font-bold text-white mb-4 flex items-center gap-2">
                 <Server className="w-4 h-4 text-white/40" />
                 Vercel DNS Records
@@ -60,8 +60,8 @@ const Settings: React.FC = () => {
                 To connect your domain, please add the following records to your domain provider's DNS settings.
               </p>
 
-              <div className="space-y-4">
-                <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <div className="space-y-4 overflow-x-auto">
+                <div className="bg-white/5 rounded-xl border border-white/10 min-w-[500px]">
                   <div className="grid grid-cols-4 text-[10px] font-bold text-white/40 uppercase tracking-widest bg-white/5 p-3">
                     <div>Type</div>
                     <div>Name</div>
@@ -70,7 +70,7 @@ const Settings: React.FC = () => {
                   <div className="p-3 grid grid-cols-4 text-sm font-mono text-white/80 items-center border-b border-white/5">
                     <div>A</div>
                     <div>@</div>
-                    <div className="col-span-2 flex justify-between items-center">
+                    <div className="col-span-2 flex justify-between items-center pr-2">
                       <span>76.76.21.21</span>
                       <button onClick={() => handleCopy('76.76.21.21')} className="text-white/40 hover:text-white transition-colors">
                         {copied ? <CheckCircle2 className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
@@ -80,7 +80,7 @@ const Settings: React.FC = () => {
                   <div className="p-3 grid grid-cols-4 text-sm font-mono text-white/80 items-center">
                     <div>CNAME</div>
                     <div>www</div>
-                    <div className="col-span-2 flex justify-between items-center">
+                    <div className="col-span-2 flex justify-between items-center pr-2">
                       <span>cname.vercel-dns.com</span>
                       <button onClick={() => handleCopy('cname.vercel-dns.com')} className="text-white/40 hover:text-white transition-colors">
                         {copied ? <CheckCircle2 className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}

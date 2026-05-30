@@ -196,23 +196,23 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="space-y-10">
-      <header className="flex justify-between items-end">
+      <header className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6">
         <div>
           <h1 className="text-4xl font-black uppercase italic tracking-tighter">{t('admin.nav.analytics')}</h1>
           <p className="text-white/40 text-xs uppercase tracking-[0.4em] font-bold mt-2">{t('admin.editor.subtitle')}</p>
         </div>
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-4">
           <button 
             onClick={toggleLang}
-            className="bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center gap-3 hover:bg-white/10 transition-all text-xs font-bold uppercase tracking-widest text-white/60"
+            className="hidden sm:flex bg-white/5 border border-white/10 rounded-2xl p-4 items-center gap-3 hover:bg-white/10 transition-all text-xs font-bold uppercase tracking-widest text-white/60"
           >
             <Languages className="w-4 h-4 text-blue-400" />
             {lang === 'vi' ? 'Tiếng Việt' : 'English'}
           </button>
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center gap-4">
-            <div className="text-right">
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center justify-between sm:justify-center gap-4 w-full sm:w-auto">
+            <div className="text-left sm:text-right">
               <p className="text-[10px] text-white/40 uppercase tracking-widest font-bold">{t('admin.stats.status')}</p>
-              <p className="text-xs text-green-400 font-bold uppercase tracking-widest flex items-center gap-2 justify-end">
+              <p className="text-xs text-green-400 font-bold uppercase tracking-widest flex items-center gap-2 justify-start sm:justify-end mt-1">
                 <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
                 {t('admin.stats.optimal')}
               </p>
@@ -252,12 +252,12 @@ const Dashboard: React.FC = () => {
       {/* Charts Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <GlassCard className="lg:col-span-2 p-8 border-white/5" glowColor="purple">
-          <div className="flex justify-between items-center mb-10">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10">
             <div>
               <h3 className="text-xl font-black uppercase italic tracking-tighter">{t('admin.charts.traffic')}</h3>
               <p className="text-[10px] text-white/40 uppercase tracking-widest font-bold mt-1">{t('admin.charts.growth')}</p>
             </div>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <div className="bg-white/5 border border-white/10 rounded-lg p-1 flex">
                 <button 
                   onClick={() => setTimeRange('week')}
@@ -272,7 +272,7 @@ const Dashboard: React.FC = () => {
                   Month
                 </button>
               </div>
-              <div className="flex gap-4 ml-4">
+              <div className="flex gap-4 sm:ml-4">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-blue-500" />
                   <span className="text-[10px] text-white/40 uppercase font-bold tracking-widest">{t('admin.charts.views')}</span>

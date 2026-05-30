@@ -155,22 +155,22 @@ const ContentEditor: React.FC = () => {
 
   return (
     <div className="space-y-10">
-      <header className="flex justify-between items-end">
+      <header className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
         <div>
           <h1 className="text-4xl font-black uppercase italic tracking-tighter">{t('admin.editor.title')}</h1>
           <p className="text-white/40 text-xs uppercase tracking-[0.4em] font-bold mt-2">{t('admin.editor.subtitle')}</p>
         </div>
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row w-full md:w-auto gap-4">
           <button 
             onClick={toggleLang}
-            className="flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-2xl text-[10px] text-white/60 font-bold uppercase tracking-widest hover:bg-white/10 transition-all"
+            className="flex justify-center items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-2xl text-[10px] text-white/60 font-bold uppercase tracking-widest hover:bg-white/10 transition-all"
           >
             <Languages className="w-4 h-4 text-blue-400" />
             {lang === 'vi' ? 'Tiếng Việt' : 'English'}
           </button>
           <button 
             onClick={handleReset}
-            className="flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 rounded-2xl text-[10px] text-white font-bold uppercase tracking-widest hover:bg-white/10 transition-all"
+            className="flex justify-center items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 rounded-2xl text-[10px] text-white font-bold uppercase tracking-widest hover:bg-white/10 transition-all"
           >
             <RefreshCw className="w-3 h-3" />
             {t('admin.editor.reset')}
@@ -178,7 +178,7 @@ const ContentEditor: React.FC = () => {
           <button 
             onClick={handleSave}
             disabled={isSaving}
-            className={`flex items-center gap-2 px-8 py-3 rounded-2xl text-[10px] text-white font-black uppercase tracking-[0.2em] transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)] ${isSaving ? 'bg-blue-800' : 'bg-blue-500 hover:bg-blue-400'}`}
+            className={`flex justify-center items-center gap-2 px-8 py-3 rounded-2xl text-[10px] text-white font-black uppercase tracking-[0.2em] transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)] ${isSaving ? 'bg-blue-800' : 'bg-blue-500 hover:bg-blue-400'}`}
           >
             {isSaving ? (
               <RefreshCw className="w-3 h-3 animate-spin" />
@@ -194,23 +194,25 @@ const ContentEditor: React.FC = () => {
 
       <div className="grid grid-cols-1 xl:grid-cols-4 gap-10">
         {/* Navigation Rail */}
-        <aside className="space-y-2 sticky top-10 h-fit">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`w-full text-left p-5 rounded-2xl transition-all border ${
-                activeTab === tab.id 
-                  ? 'bg-blue-500/10 border-blue-500/30 text-blue-400' 
-                  : 'bg-white/5 border-white/5 text-white/40 hover:text-white'
-              }`}
-            >
-              <div className="flex justify-between items-center">
-                <span className="text-xs font-black uppercase tracking-widest">{tab.label}</span>
-                {activeTab === tab.id && <ChevronRight className="w-4 h-4" />}
-              </div>
-            </button>
-          ))}
+        <aside className="xl:col-span-1 border-b border-white/5 xl:border-none pb-4 xl:pb-0">
+          <div className="flex xl:flex-col gap-2 overflow-x-auto xl:overflow-visible pb-2 xl:pb-0 scrollbar-hide xl:sticky xl:top-10 h-fit">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex-shrink-0 text-left p-4 xl:p-5 rounded-2xl transition-all border ${
+                  activeTab === tab.id 
+                    ? 'bg-blue-500/10 border-blue-500/30 text-blue-400' 
+                    : 'bg-white/5 border-white/5 text-white/40 hover:text-white'
+                }`}
+              >
+                <div className="flex justify-between items-center gap-4">
+                  <span className="text-[10px] xl:text-xs font-black uppercase tracking-widest whitespace-nowrap">{tab.label}</span>
+                  {activeTab === tab.id && <ChevronRight className="hidden xl:block w-4 h-4" />}
+                </div>
+              </button>
+            ))}
+          </div>
         </aside>
 
         {/* Editor Area */}

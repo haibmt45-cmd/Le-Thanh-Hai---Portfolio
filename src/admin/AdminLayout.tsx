@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, Outlet, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import SEO from '../components/SEO';
 import { 
   LayoutDashboard, 
@@ -10,7 +10,9 @@ import {
   LogOut,
   ChevronRight,
   Globe,
-  Languages
+  Languages,
+  Menu,
+  X
 } from 'lucide-react';
 import { useAuth } from './AuthContext';
 import { useI18n } from '../context/I18nContext';
@@ -20,6 +22,7 @@ const AdminLayout: React.FC = () => {
   const { lang, toggleLang, t } = useI18n();
   const navigate = useNavigate();
   const location = useLocation();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const handleLogout = () => {
     logout();
@@ -33,12 +36,46 @@ const AdminLayout: React.FC = () => {
     { id: 'settings', label: t('admin.nav.settings'), path: '/admin/settings', icon: Settings },
   ];
 
+  // Close sidebar on path change (mobile)
+  useEffect(() => {
+    setIsSidebarOpen(false);
+  }, [location.pathname]);
+
   return (
     <div className="min-h-screen bg-[#050505] text-white flex">
       <SEO title="Admin | Portfolio" />
+      
+      {/* Mobile Top Bar */}
+      <div className="lg:hidden fixed top-0 left-0 right-0 h-16 border-b border-white/10 bg-black/80 backdrop-blur-3xl z-40 flex items-center justify-between px-6">
+        <Link to="/" className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded-lg bg-blue-500/20 border border-blue-500/30 flex items-center justify-center">
+            <Globe className="w-4 h-4 text-blue-400" />
+          </div>
+          <div>
+            <h1 className="text-sm font-black uppercase italic tracking-tighter">Site CMS</h1>
+          </div>
+        </Link>
+        <button 
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          className="p-2 bg-white/5 border border-white/10 rounded-xl"
+        >
+          {isSidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
+      </div>
+
+      {/* Sidebar Overlay */}
+      <AnimatePresence>
+        {isSidebarOpen && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            onClick={() => setIsSidebarOpen(false)}
+            className="lg:hidden fixed inset-0 bg-black/60 z-40 backdrop-blur-sm"
+          />
+        )}
+      </AnimatePresence>
+
       {/* Sidebar */}
-      <aside className="w-72 border-r border-white/10 bg-black/40 backdrop-blur-3xl flex flex-col fixed h-full z-50">
-        <div className="p-8 border-b border-white/5">
+      <aside className={`w-72 border-r border-white/10 bg-black/90 lg:bg-black/40 backdrop-blur-3xl flex flex-col fixed h-full z-50 transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
+        <div className="p-8 border-b border-white/5 hidden lg:block">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-8 h-8 rounded-lg bg-blue-500/20 border border-blue-500/30 flex items-center justify-center group-hover:scale-110 transition-transform">
               <Globe className="w-4 h-4 text-blue-400" />
@@ -50,7 +87,7 @@ const AdminLayout: React.FC = () => {
           </Link>
         </div>
 
-        <nav className="flex-1 p-4 space-y-2 mt-4">
+        <nav className="flex-1 p-4 space-y-2 mt-2 lg:mt-4 overflow-y-auto">
           {menuItems.map((item) => {
             const isActive = location.pathname === item.path;
             const Icon = item.icon;
@@ -79,7 +116,7 @@ const AdminLayout: React.FC = () => {
           })}
         </nav>
 
-        <div className="p-4 border-t border-white/5 space-y-2">
+        <div className="p-4 border-t border-white/5 space-y-2 pb-safe">
           <button
             onClick={toggleLang}
             className="w-full flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all text-white/60 group"
@@ -102,7 +139,7 @@ const AdminLayout: React.FC = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 ml-72 p-10">
+      <main className="flex-1 lg:ml-72 p-6 lg:p-10 pt-24 lg:pt-10 w-full overflow-x-hidden">
         <Outlet />
       </main>
     </div>
