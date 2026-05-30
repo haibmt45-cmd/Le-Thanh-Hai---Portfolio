@@ -169,6 +169,17 @@ const ContentEditor: React.FC = () => {
             {lang === 'vi' ? 'Tiếng Việt' : 'English'}
           </button>
           <button 
+            onClick={() => {
+              if (window.confirm('Bạn có chắc chắn muốn Khôi phục dữ liệu gốc không? Các nội dung bạn đã chỉnh sửa trong Admin sẽ bị xoá.')) {
+                localStorage.removeItem('site_content');
+                window.location.reload();
+              }
+            }}
+            className="flex justify-center items-center gap-2 px-6 py-3 bg-red-500/10 text-red-500 border border-red-500/20 rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-red-500/20 transition-all"
+          >
+            Khôi phục gốc
+          </button>
+          <button 
             onClick={handleReset}
             className="flex justify-center items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 rounded-2xl text-[10px] text-white font-bold uppercase tracking-widest hover:bg-white/10 transition-all"
           >
