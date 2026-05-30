@@ -37,9 +37,10 @@ const VGGMarketing: React.FC = () => {
           </h2>
           <div className="flex flex-col items-center gap-16 mt-16 w-full">
             <div className="max-w-5xl text-center">
-               <p className="text-white/60 text-xl leading-relaxed mb-10">
-                  {t('vgg.desc_part1')}<span className="text-red-500 font-bold">{t('vgg.desc_highlight')}</span>{t('vgg.desc_part2')}
-               </p>
+               <div 
+                 className="text-white/60 text-xl leading-relaxed mb-10 text-justify"
+                 dangerouslySetInnerHTML={{ __html: t('vgg.desc_html') }}
+               />
                <div className="flex flex-wrap justify-center gap-6">
                   {(Array.isArray(tags) ? tags : defaultTags).map(tag => (
                     <span key={tag} className="px-6 py-3 rounded-full border border-red-500/30 bg-red-500/5 text-red-500 text-sm font-semibold">
@@ -52,9 +53,10 @@ const VGGMarketing: React.FC = () => {
             <GlassCard className="w-full max-w-4xl mx-auto border-red-500/20 text-center px-8 py-10 md:px-16" glowColor="red">
                <h4 className="text-red-500 font-bold mb-4 uppercase tracking-widest text-sm">{t('vgg.achievement_label')}</h4>
                <p className="text-2xl md:text-3xl font-bold mb-6">{t('vgg.achievement_title')}</p>
-               <p className="text-white/60 text-base md:text-lg leading-relaxed">
-                  {t('vgg.achievement_desc')}
-               </p>
+               <div 
+                 className="text-white/60 text-base md:text-lg leading-relaxed text-justify"
+                 dangerouslySetInnerHTML={{ __html: t('vgg.achievement_desc_html') }}
+               />
             </GlassCard>
           </div>
         </div>
@@ -77,7 +79,10 @@ const VGGMarketing: React.FC = () => {
                     <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
                     {t('vgg.key_result_label')}
                  </p>
-                 <p className="text-white/90 text-sm mt-1 leading-relaxed font-medium text-justify">{item.kr}</p>
+                 <p 
+                   className="text-white/90 text-sm mt-1 leading-relaxed font-medium text-justify"
+                   dangerouslySetInnerHTML={{ __html: item.kr }}
+                 />
               </div>
             </GlassCard>
           ))}
