@@ -9,6 +9,7 @@ import ContentEditor from './admin/ContentEditor';
 import Settings from './admin/Settings';
 import Analytics from './admin/Analytics';
 import { AuthProvider, useAuth } from './admin/AuthContext';
+import ScriptsInjector from './components/ScriptsInjector';
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isAuthenticated } = useAuth();
@@ -22,6 +23,7 @@ export default function App() {
   return (
     <HelmetProvider>
       <Router>
+        <ScriptsInjector />
         <AuthProvider>
           <Routes>
             {/* Public Website */}
