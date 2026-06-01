@@ -14,6 +14,14 @@ service cloud.firestore {
              data.timestamp is number;
     }
 
+    match /settings/{document=**} {
+      allow read, write: if true;
+    }
+    
+    match /content/{document=**} {
+      allow read, write: if true;
+    }
+    
     match /page_views/{viewId} {
       allow create: if isValidPageView(request.resource.data);
       allow update: if isValidPageView(request.resource.data);
