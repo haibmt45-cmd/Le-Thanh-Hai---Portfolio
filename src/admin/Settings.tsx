@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Globe, Server, CheckCircle2, Copy, Search, Code, Palette, Settings as SettingsIcon, Save, RefreshCw, Layers } from 'lucide-react';
 import GlassCard from '../components/GlassCard';
+import { db } from '../firebase/config';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 
 const Settings: React.FC = () => {
   const [activeTab, setActiveTab] = useState('seo');
@@ -29,19 +31,48 @@ const Settings: React.FC = () => {
     fontFamily: 'Inter'
   });
 
+  useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const docRef = doc(db, 'settings', 'global');
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          if (data.seo) setSeo(data.seo);
+          if (data.integrations) setIntegrations(data.integrations);
+          if (data.appearance) setAppearance(data.appearance);
+          if (data.domain) setDomain(data.domain);
+        }
+      } catch (error) {
+        console.error("Error fetching settings: ", error);
+      }
+    };
+    fetchSettings();
+  }, []);
+
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     setIsSaving(true);
-    // Simulate save
-    setTimeout(() => {
-      setIsSaving(false);
+    try {
+      const docRef = doc(db, 'settings', 'global');
+      await setDoc(docRef, {
+        seo,
+        integrations,
+        appearance,
+        domain
+      }, { merge: true });
       alert('Cài đặt đã được lưu!');
-    }, 800);
+    } catch (error) {
+      console.error("Error saving settings: ", error);
+      alert('Có lỗi xảy ra khi lưu cài đặt.');
+    } finally {
+      setIsSaving(false);
+    }
   };
 
   const tabs = [
