@@ -84,9 +84,9 @@ export const translations = {
           desc: 'Chịu trách nhiệm Set up, quản lý kịch bản chương trình và thiết kế hệ thống Visual. Kết quả là toàn bộ nội dung hiển thị đồng bộ, đúng tiến độ, góp phần tạo nên sự chuyên nghiệp và chỉn chu cho buổi lễ kỷ niệm 10 năm của thương hiệu.',
           role: 'Event Operation & Visual Management',
           result: 'Quản lý Rundown và Visual chính xác, không sai sót kỹ thuật. Vận hành hệ thống hiển thị đồng bộ với kịch bản chương trình. Đảm bảo tính chỉn chu và chuyên nghiệp xuyên suốt buổi lễ kỷ niệm.',
-          img1: 'https://zunikevent.vn/wp-content/uploads/2025/10/HUY00851.jpg',
-          img2: 'https://zunikevent.vn/wp-content/uploads/2025/10/HUY01421-300x200.jpg',
-          img3: 'https://zunikevent.vn/wp-content/uploads/2025/10/DSC00526-300x200.jpg'
+          img1: 'https://drive.google.com/thumbnail?id=1QoIejv2Q0_kPiZ0PGCmvc_aJ6keU6PO2&sz=w1000',
+          img2: 'https://drive.google.com/thumbnail?id=1n6SP8L5rqJGfqgZO3W7cTJ_bX3nnxyvx&sz=w1000',
+          img3: 'https://drive.google.com/thumbnail?id=1WRlUYkJTg05-w7jx8IJXOGISJkOV6lel&sz=w1000'
         },
         p2: {
           title: 'Kỷ niệm 35 năm Khoa QLCN - Trường Đại học Bách Khoa',
@@ -102,7 +102,7 @@ export const translations = {
           desc: 'Đảm nhiệm cùng team để xây dựng Concept, thiết kế Proposal và trực tiếp thuyết trình phương án cho dự án. Đặc biệt trong giai đoạn thi công, em đã chủ động xử lý các vấn đề phát sinh tại hiện trường (hoa không giống như bản 3D, supplier làm rách thảm, ...) nhằm tối ưu hóa ngân sách và đảm bảo tính hợp lý trong vận hành thực tế.',
           role: 'Account Executive & Production Coordinator',
           result: 'Tối ưu hóa ngân sách đầu tư thông qua việc xử lý phát sinh kỹ thuật lúc set-up. Đảm bảo vận hành hợp lý và đúng tiến độ bàn giao cho client. Duy trì tiêu chuẩn thẩm mỹ cao nhất với chi phí vận hành hợp lý nhất.',
-          img1: 'https://zunikevent.vn/wp-content/uploads/2026/04/612006996_919523067300799_6676736734415795302_n-2048x779.jpg',
+          img1: 'https://drive.google.com/thumbnail?id=1smxLH4d7M28CFLCA0VKylxqi__hdCKEM&sz=w1000',
           img2: 'https://drive.google.com/thumbnail?id=1iUrCpUOvh-CkNBXgtVtQiXlj_IZz5G-D&sz=w1000',
           img3: 'https://drive.google.com/thumbnail?id=1Ji-iznHlH1xHeEmIlBdO_XfjdWosAXiy&sz=w1000'
         },
@@ -111,7 +111,7 @@ export const translations = {
           desc: 'Đảm nhiệm cùng team phụ trách xây dựng Concept, lên ý tưởng chi tiết và thiết kế Proposal cho dự án. Bên cạnh việc hỗ trợ thuyết trình phương án, em trực tiếp tham gia hỗ trợ xây dựng báo giá, đảm bảo sự cân bằng giữa yêu cầu thẩm mỹ cao của thương hiệu và ngân sách thực tế.',
           role: 'Account Executive & Event Planner',
           result: 'Phê duyệt Proposal nhanh chóng nhờ sự cân bằng giữa sáng tạo và báo giá thực tế. Đảm bảo tính khả thi tài chính cho tất cả các hạng mục triển khai.',
-          img1: 'https://zunikevent.vn/wp-content/uploads/2026/03/TT_9739-2048x1365.jpg',
+          img1: 'https://drive.google.com/thumbnail?id=1BbKu1j-xH_-iKJQ_3w-5pMGx3gYDeAbS&sz=w1000',
           img2: 'https://drive.google.com/thumbnail?id=1T4z5EWVuNBYOGEshToEravb46g8hciRi&sz=w1000',
           img3: 'https://drive.google.com/thumbnail?id=1AM9Hm-riv4w1ivuTdtgYz2v_grMvNumB&sz=w1000'
         }
@@ -314,9 +314,9 @@ export const translations = {
           desc: 'Took full responsibility for the event setup, program script management, and visual system design. As a result, all visual contents were displayed synchronously and on schedule, strictly ensuring a deeply professional and meticulous atmosphere for the brand\'s 10-year milestone.',
           role: 'Event Operation & Visual Management',
           result: 'Flawlessly managed the rundown and visual systems with zero technical errors. Synchronized the display operations perfectly with the program script. Ensured meticulous detailing and high professionalism throughout the anniversary ceremony.',
-          img1: 'https://zunikevent.vn/wp-content/uploads/2025/10/HUY00851.jpg',
-          img2: 'https://zunikevent.vn/wp-content/uploads/2025/10/HUY01421-300x200.jpg',
-          img3: 'https://zunikevent.vn/wp-content/uploads/2025/10/DSC00526-300x200.jpg'
+          img1: 'https://drive.google.com/thumbnail?id=1QoIejv2Q0_kPiZ0PGCmvc_aJ6keU6PO2&sz=w1000',
+          img2: 'https://drive.google.com/thumbnail?id=1n6SP8L5rqJGfqgZO3W7cTJ_bX3nnxyvx&sz=w1000',
+          img3: 'https://drive.google.com/thumbnail?id=1WRlUYkJTg05-w7jx8IJXOGISJkOV6lel&sz=w1000'
         },
         p2: {
           title: '35th Anniversary - Faculty of Industrial Management (HCMUT)',
@@ -332,7 +332,7 @@ export const translations = {
           desc: 'Worked alongside the team to brainstorm the Concept, structure the Proposal, and directly present the strategy for the project. Specifically, during the execution phase, I took the initiative to resolve on-site arising issues (e.g., flowers deviating from 3D drafts, suppliers tearing carpets) to effectively optimize the budget and maintain flawless practical operation.',
           role: 'Account Executive & Production Coordinator',
           result: 'Optimized investment budgets by actively resolving technical issues during setup. Ensured logical operation and timely handover to the client. Maintained the highest aesthetic standards paired with the most reasonable operational costs.',
-          img1: 'https://zunikevent.vn/wp-content/uploads/2026/04/612006996_919523067300799_6676736734415795302_n-2048x779.jpg',
+          img1: 'https://drive.google.com/thumbnail?id=1smxLH4d7M28CFLCA0VKylxqi__hdCKEM&sz=w1000',
           img2: 'https://drive.google.com/thumbnail?id=1iUrCpUOvh-CkNBXgtVtQiXlj_IZz5G-D&sz=w1000',
           img3: 'https://drive.google.com/thumbnail?id=1Ji-iznHlH1xHeEmIlBdO_XfjdWosAXiy&sz=w1000'
         },
@@ -341,7 +341,7 @@ export const translations = {
           desc: 'Joined the team in charge of conceptual development, detailed ideation, and Proposal design for the project. In addition to supporting the pitching process, I directly participated in structuring the quotation, ensuring a perfect balance between the brand\'s high aesthetic standards and the actual budget framework.',
           role: 'Account Executive & Event Planner',
           result: 'Accelerated proposal approval by perfectly balancing creative concepts with practical quotations. Ensured financial feasibility across all execution categories.',
-          img1: 'https://zunikevent.vn/wp-content/uploads/2026/03/TT_9739-2048x1365.jpg',
+          img1: 'https://drive.google.com/thumbnail?id=1BbKu1j-xH_-iKJQ_3w-5pMGx3gYDeAbS&sz=w1000',
           img2: 'https://drive.google.com/thumbnail?id=1T4z5EWVuNBYOGEshToEravb46g8hciRi&sz=w1000',
           img3: 'https://drive.google.com/thumbnail?id=1AM9Hm-riv4w1ivuTdtgYz2v_grMvNumB&sz=w1000'
         }
