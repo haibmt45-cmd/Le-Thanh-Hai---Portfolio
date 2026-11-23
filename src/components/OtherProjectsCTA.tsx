@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { FolderKanban, ExternalLink } from 'lucide-react';
+import { FolderKanban, ExternalLink, BarChart3, ArrowRight } from 'lucide-react';
 import GlassCard from './GlassCard';
 import { useI18n } from '../context/I18nContext';
 
@@ -9,7 +10,34 @@ const OtherProjectsCTA: React.FC = () => {
 
   return (
     <div className="w-full py-20 px-6 relative overflow-hidden">
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-4xl mx-auto relative z-10 space-y-6">
+        <GlassCard
+          className="p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative group border-blue-500/30 hover:border-blue-400/50 transition-all duration-500"
+          glowColor="blue"
+        >
+          <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+            <div className="p-4 rounded-2xl bg-blue-500/10 border border-blue-500/30 group-hover:scale-110 transition-all duration-500">
+              <BarChart3 className="w-8 h-8 text-blue-400" />
+            </div>
+            <div>
+              <h4 className="text-2xl md:text-3xl font-black uppercase italic tracking-tighter text-white mb-2">
+                Social Lens Analyzer
+              </h4>
+              <p className="text-white/60 text-sm">
+                Công cụ phân tích hiệu suất mạng xã hội từ dữ liệu thật (YouTube API v3, CSV/JSON &amp; Gemini AI)
+              </p>
+            </div>
+          </div>
+
+          <Link
+            to="/social-lens"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-blue-600/20 border border-blue-400/40 text-blue-300 text-sm font-black uppercase tracking-widest hover:bg-blue-600/40 hover:text-white transition-all duration-300 whitespace-nowrap shrink-0"
+          >
+            <span>Mở công cụ</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </GlassCard>
+
         <GlassCard 
           className="p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative group border-cyan-500/20 hover:border-cyan-400/30 transition-all duration-500" 
           glowColor="cyan"

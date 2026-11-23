@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X, BarChart3, ArrowUpRight } from 'lucide-react';
 import { useI18n } from '../context/I18nContext';
 
 interface NavbarProps {
@@ -96,72 +97,89 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, isLoading }) => {
         </button>
       </motion.div>
 
-      {/* Desktop Navigation Center */}
-      <motion.nav 
+      {/* Desktop Navigation Center + Separate Highlighted Social Lens Bar */}
+      <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={!isLoading ? { y: 0, opacity: 1 } : { y: -100, opacity: 0 }}
         transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-        className="hidden sm:flex fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-black/50 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.5),0_0_20px_rgba(255,255,255,0.05)] rounded-full px-8 py-2.5 items-center gap-10 text-xs font-bold uppercase tracking-widest text-white/80"
+        className="hidden sm:flex fixed top-6 left-1/2 -translate-x-1/2 z-50 items-center gap-3"
       >
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-full bg-cyan-900/20 blur-xl pointer-events-none" />
+        {/* Main Nav Bar: About | Projects | Contact */}
+        <nav className="relative bg-black/50 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.5),0_0_20px_rgba(255,255,255,0.05)] rounded-full px-6 lg:px-8 py-2.5 flex items-center gap-6 lg:gap-10 text-xs font-bold uppercase tracking-widest text-white/80">
+          <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-full bg-cyan-900/20 blur-xl pointer-events-none" />
 
-        {navItems.map(item => (
-          <div 
-            key={item.id} 
-            className="relative group block"
-            onMouseEnter={() => setActiveDropdown(item.id)}
-            onMouseLeave={() => setActiveDropdown(null)}
-          >
-            {item.children ? (
-              <button className="flex items-center gap-1.5 hover:text-white transition-colors duration-300 py-3">
-                <span className={item.children.some(c => c.id === activeSection) ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]' : ''}>
-                  {item.label}
-                </span>
-                <ChevronDown className="w-4 h-4 text-white/40 group-hover:text-white/80 transition-transform duration-300 group-hover:rotate-180" strokeWidth={1} />
-              </button>
-            ) : (
-              <a 
-                href={item.href} 
-                onClick={(e) => handleScrollTo(e, item.id)}
-                className="block hover:text-white transition-colors duration-300 py-3 relative"
-              >
-                <span className={activeSection === item.id ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]' : ''}>{item.label}</span>
-                <span className={`absolute bottom-1 left-1/2 -translate-x-1/2 h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full transition-all duration-300 shadow-[0_0_10px_rgba(34,211,238,0.8)] ${activeSection === item.id ? 'w-full' : 'w-0'}`} />
-              </a>
-            )}
+          {navItems.map(item => (
+            <div 
+              key={item.id} 
+              className="relative group block"
+              onMouseEnter={() => setActiveDropdown(item.id)}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              {item.children ? (
+                <button className="flex items-center gap-1.5 hover:text-white transition-colors duration-300 py-3 whitespace-nowrap">
+                  <span className={item.children.some(c => c.id === activeSection) ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]' : ''}>
+                    {item.label}
+                  </span>
+                  <ChevronDown className="w-4 h-4 text-white/40 group-hover:text-white/80 transition-transform duration-300 group-hover:rotate-180" strokeWidth={1} />
+                </button>
+              ) : (
+                <a 
+                  href={item.href} 
+                  onClick={(e) => handleScrollTo(e, item.id)}
+                  className="block hover:text-white transition-colors duration-300 py-3 relative whitespace-nowrap"
+                >
+                  <span className={activeSection === item.id ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]' : ''}>{item.label}</span>
+                  <span className={`absolute bottom-1 left-1/2 -translate-x-1/2 h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full transition-all duration-300 shadow-[0_0_10px_rgba(34,211,238,0.8)] ${activeSection === item.id ? 'w-full' : 'w-0'}`} />
+                </a>
+              )}
 
-            {/* Desktop Dropdown */}
-            {item.children && (
-              <AnimatePresence>
-                {activeDropdown === item.id && (
-                  <motion.div 
-                    initial={{ opacity: 0, y: 15, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    transition={{ duration: 0.2, ease: "easeOut" }}
-                    className="absolute top-[100%] left-1/2 -translate-x-1/2 pt-1 w-56 flex flex-col"
-                  >
-                    <div className="p-2 bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.5)] flex flex-col relative overflow-hidden">
-                      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent" />
-                      {item.children.map(child => (
-                        <a 
-                          key={child.id}
-                          href={`#${child.id}`}
-                          onClick={(e) => handleScrollTo(e, child.id)}
-                          className="px-4 py-3 rounded-xl text-[11px] uppercase tracking-wider hover:bg-white/10 hover:text-cyan-300 transition-all duration-300 whitespace-nowrap text-left text-white/70"
-                        >
-                          <span className={activeSection === child.id ? 'text-cyan-400 font-black' : ''}>{child.label}</span>
-                        </a>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            )}
-          </div>
-        ))}
-      </motion.nav>
+              {/* Desktop Dropdown */}
+              {item.children && (
+                <AnimatePresence>
+                  {activeDropdown === item.id && (
+                    <motion.div 
+                      initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      className="absolute top-[100%] left-1/2 -translate-x-1/2 pt-1 w-56 flex flex-col"
+                    >
+                      <div className="p-2 bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.5)] flex flex-col relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent" />
+                        {item.children.map((child: { id: string; label: string }) => (
+                          <a
+                            key={child.id}
+                            href={`#${child.id}`}
+                            onClick={(e) => handleScrollTo(e, child.id)}
+                            className="px-4 py-3 rounded-xl text-[11px] uppercase tracking-wider hover:bg-white/10 hover:text-cyan-300 transition-all duration-300 whitespace-nowrap text-left text-white/70"
+                          >
+                            <span className={activeSection === child.id ? 'text-cyan-400 font-black' : ''}>{child.label}</span>
+                          </a>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              )}
+            </div>
+          ))}
+        </nav>
+
+        {/* Separate Highlighted Social Lens Bar */}
+        <Link
+          to="/social-lens"
+          className="relative group flex items-center gap-2 px-5 py-3.5 rounded-full bg-gradient-to-r from-blue-600/35 via-cyan-500/30 to-teal-400/30 backdrop-blur-xl border border-cyan-300/75 shadow-[0_0_24px_rgba(34,211,238,0.45),inset_0_1px_1px_rgba(255,255,255,0.4)] hover:shadow-[0_0_36px_rgba(34,211,238,0.75)] hover:border-cyan-200 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap shrink-0 overflow-hidden"
+        >
+          <span className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-200 to-transparent opacity-90" />
+          <span className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 via-blue-400/15 to-teal-300/10 opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" />
+          <BarChart3 className="relative z-10 w-4 h-4 text-cyan-300 drop-shadow-[0_0_8px_rgba(34,211,238,0.9)]" />
+          <span className="relative z-10 text-xs font-extrabold uppercase tracking-widest text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]">
+            Social Lens
+          </span>
+          <ArrowUpRight className="relative z-10 w-3.5 h-3.5 text-cyan-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+        </Link>
+      </motion.div>
 
       {/* Mobile Menu Fullscreen Overlay */}
       <AnimatePresence>
@@ -177,6 +195,18 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, isLoading }) => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-black to-black pointer-events-none" />
 
             <div className="flex flex-col gap-10 text-center text-white w-full px-8 overflow-y-auto pb-20 relative z-10">
+              <div className="w-full text-center">
+                <Link
+                  to="/social-lens"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="inline-flex items-center justify-center gap-2.5 py-4 px-10 rounded-full border border-cyan-300/75 bg-gradient-to-r from-blue-600/35 via-cyan-500/30 to-teal-400/30 text-lg font-black uppercase tracking-widest text-white shadow-[0_0_24px_rgba(34,211,238,0.45)]"
+                >
+                  <BarChart3 className="w-5 h-5 text-cyan-300" />
+                  <span>Social Lens</span>
+                  <ArrowUpRight className="w-4 h-4 text-cyan-200" />
+                </Link>
+              </div>
+
               {navItems.map(item => (
                 <div key={item.id} className="flex flex-col gap-5">
                   {item.children ? (
@@ -186,8 +216,8 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, isLoading }) => {
                         {item.label}
                       </div>
                       <div className="flex flex-col gap-6 text-left pl-6 border-l border-white/5">
-                        {item.children.map(child => (
-                          <a 
+                        {item.children.map((child: { id: string; label: string }) => (
+                          <a
                             key={child.id}
                             href={`#${child.id}`}
                             onClick={(e) => handleScrollTo(e, child.id)}

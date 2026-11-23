@@ -2,5 +2,5 @@
   "name": "Lê Thanh Hải - Portfolio hihi",
   "description": "Portfolio cá nhân của Lê Thanh Hải - Chuyên viên Event & Marketing Executive với phong cách thiết kế Apple Futuristic 3D Glass.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

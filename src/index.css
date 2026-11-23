@@ -5,6 +5,8 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-saas-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-saas-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   
   /* Navbar height for scroll-padding-top */
   --spacing-nav-height: 80px;
@@ -13,6 +15,16 @@
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
   }
 }
 

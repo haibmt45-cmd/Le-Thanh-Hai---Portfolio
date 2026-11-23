@@ -10,6 +10,7 @@ import Settings from './admin/Settings';
 import Analytics from './admin/Analytics';
 import { AuthProvider, useAuth } from './admin/AuthContext';
 import ScriptsInjector from './components/ScriptsInjector';
+import SocialLensPage from './social-lens/SocialLensPage';
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isAuthenticated } = useAuth();
@@ -28,6 +29,7 @@ export default function App() {
           <Routes>
             {/* Public Website */}
             <Route path="/" element={<PublicSite />} />
+            <Route path="/social-lens" element={<SocialLensPage />} />
 
             {/* Admin Authentication */}
             <Route path="/admin/login" element={<Login />} />
